@@ -19,7 +19,7 @@ export default function NavigationBar() {
               Jose Mejia
             </span>
           </Link>
-          <div className='flex text-gray-300'>
+          <div className='flex text-gray-400 hover:text-gray-200'>
             <Link href='/projects'>Projects</Link>
           </div>
         </div>
