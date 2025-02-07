@@ -24,7 +24,7 @@ export default function DesktopMenuBar() {
         >
           <IconBrandLinkedin className='text-gray-200 hover:text-blue-500' />
         </Link>
-        <Link href='mailto:jamc.mejia@gmail.com'>
+        <Link href='mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website'>
           <IconBrandGmail className='text-gray-200 hover:text-blue-500' />
         </Link>
         <Link target='_blank' href='/cv_josemejia.pdf'>

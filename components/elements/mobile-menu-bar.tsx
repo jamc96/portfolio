@@ -17,7 +17,6 @@ export default function MobileMenuBar() {
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const target = event.target as HTMLElement;
-    // Check if the clicked element is NOT inside a Link
     if (target.closest('a')) {
       setOpen(false);
     }
@@ -68,7 +67,7 @@ export default function MobileMenuBar() {
                 >
                   <IconBrandLinkedin className='text-gray-200 hover:text-blue-500' />
                 </Link>
-                <Link href='mailto:jamc.mejia@gmail.com'>
+                <Link href='mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website'>
                   <IconBrandGmail className='text-gray-200 hover:text-blue-500' />
                 </Link>
                 <Link target='_blank' href='/cv_josemejia.pdf'>
