@@ -30,7 +30,9 @@ export default function Hero() {
           Hire Me
         </Link>
         <Link
-          href='/projects' className='text-center px-24 py-3 lg:px-16 text-neutral-200 text-base hover:bg-transparent border hover:border-blue-500 hover:text-blue-500 font-medium hover:font-semibold hover:shadow-[0_6px_20px_rgba(0,118,255,23%)]'>
+          href='/projects'
+          className='text-center px-24 py-3 lg:px-16 text-neutral-200 text-base hover:bg-transparent border hover:border-blue-500 hover:text-blue-500 font-medium hover:font-semibold hover:shadow-[0_6px_20px_rgba(0,118,255,23%)]'
+        >
           Previews Work
         </Link>
       </motion.div>
