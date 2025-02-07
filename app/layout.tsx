@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: 'Jose Mejia | Full Stack Developer',
   description:
     'Digital solutions and cloud-based applications with Next.js, React, and Node.js. With 8+ years of expertise in modern JavaScript frameworks, scalable architectures, and high-performance web experiences.',
+  openGraph: {
+    images: '/profile.png',
+  },
 };
 
 export default function RootLayout({
