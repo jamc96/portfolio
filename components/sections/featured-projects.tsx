@@ -7,16 +7,16 @@ export default function FeaturedProjects() {
     {
       title: 'Website Redisign',
       description:
-        'Led a complete redesign of the platform, focusing on localization, performance improvements, and SEO enhancements. Delivered interactive pages like weddings and resorts to create a seamless user experience.',
+        'Led a complete redesign of the platform, focusing on high availability, performance and SEO improvements. Delivered interactive pages like weddings and resorts to create a seamless user experience.',
       link: 'https://www.beaches.com/',
       label: 'beaches.com',
       image: '/beaches.png',
-      tags: ['Next.js', 'React', 'Tailwindcss'],
+      tags: ['Next.js', 'Node', 'Kubernetes'],
     },
     {
-      title: 'Nonprofit Website',
+      title: 'Nonprofit Foundation',
       description:
-        'Transformed the nonprofit’s website into a fully manageable CMS, boosting content management efficiency by 80%, enabling the team to spend more time on mission-critical tasks.',
+        'Enhanced the user experience for donors and content administators, providing a fully modern responsive interface with integrations for blogging and payment processing.',
       link: 'https://sandalsfoundation.org/',
       image: '/sandals-foundation.png',
       label: 'sandalsfoundation.org',
@@ -25,7 +25,7 @@ export default function FeaturedProjects() {
     {
       title: 'Blogs Enhancement',
       description:
-        'Redesigned the blog with modern UI/UX, integrated multilingual support, and reorganized content to boost user engagement and enhance the reading experience.',
+        'Developed the rebranded blog with a modern UI/UX, integrating SEO and performance optimizations while restructuring content to enhance user engagement and the reading experience.',
       link: 'https://www.beaches.co.uk/blog/',
       image: '/blog.png',
       label: 'beaches.co.uk',
