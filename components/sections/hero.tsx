@@ -1,8 +1,9 @@
 'use client';
 import { motion } from 'framer-motion';
-import { LampContainer } from './ui/lamp';
-import { FlipWords } from './ui/flip-words';
+
 import Link from 'next/link';
+import { LampContainer } from '../ui/lamp';
+import { FlipWords } from '../ui/flip-words';
 
 export default function Hero() {
   const words = ['impactful', 'scalable', 'innovative', 'modern', 'better'];
