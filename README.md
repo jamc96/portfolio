@@ -1,80 +1,150 @@
-# Turborepo starter
+# Portfolio - Monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+This is the **monorepo** for my personal portfolio, built using **Next.js** and managed with **pnpm** and **Turbo** for efficient development. It includes multiple applications and shared packages to streamline the development process.
 
-## Using this example
+## 📁 Structure
 
-Run the following command:
+```
+portfolio-monorepo/
+│── apps/
+│   ├── web/       # Next.js Portfolio Website
+│   ├── cms/       # Strapi CMS
+│
+│── packages/
+│   ├── typescript-config/  # Shared TypeScript configurations
+│   ├── types/              # Shared TypeScript types
+│
+│── package.json          # Root package configuration
+│── turbo.json            # Turbo build configurations
+│── pnpm-workspace.yaml   # pnpm workspace settings
+```
+
+## 🚀 Getting Started
+
+### 1️⃣ Install Dependencies
+
+Ensure you have **Node.js >=18** and **pnpm 9** installed.
 
 ```sh
-npx create-turbo@latest
+pnpm install
 ```
 
-## What's inside?
+### 2️⃣ Run Development Mode
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@monorepo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
+```sh
 pnpm dev
 ```
 
-### Remote Caching
+This runs the portfolio application in development mode using **Turbo**.
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+### 3️⃣ Build Application
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```sh
+pnpm build
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+This compiles all apps and packages using `turbo build`.
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+### 4️⃣ Lint Code
 
+```sh
+pnpm lint
 ```
-npx turbo link
+
+### 5️⃣ Clean Workspace
+
+```sh
+pnpm clean
 ```
 
-## Useful Links
+## 📦 Applications & Packages
 
-Learn more about the power of Turborepo:
+### 🎨 Portfolio (@portfolio/web)
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- **Framework**: Next.js (React 19)
+- **Commands**:
+  ```sh
+  pnpm --filter @portfolio/web dev   # Run Next.js in dev mode
+  pnpm --filter @portfolio/web build # Build Next.js project
+  ```
+
+### 📊 CMS (@portfolio/cms)
+
+- **Framework**: Strapi 5
+- **Commands**:
+  ```sh
+  pnpm --filter @portfolio/cms dev   # Run Strapi in dev mode
+  pnpm --filter @portfolio/cms build # Build Strapi project
+  ```
+
+### 📜 Shared TypeScript Config (@portfolio/typescript-config)
+
+- Stores TypeScript configurations for all projects.
+
+### 🔗 Shared Types (@portfolio/types)
+
+- Syncs TypeScript types between **projects**.
+- **Command**:
+  ```sh
+  pnpm --filter @portfolio/types sync # Sync shared types
+  ```
+
+## ⚡ Turbo Configuration
+
+This monorepo uses **Turbo** for task caching and parallel execution.
+
+- **turbo.json** defines how build, dev, lint, and other tasks run efficiently.
+
+## 🚀 Deployment
+
+### 📤 Deploy Portfolio on Vercel
+
+1. Install Vercel CLI:
+   ```sh
+   pnpm add -g vercel
+   ```
+2. Authenticate with Vercel:
+   ```sh
+   vercel login
+   ```
+3. Deploy:
+   ```sh
+   vercel --prod
+   ```
+4. **Fixing Corepack Issue:** If you encounter a deployment issue related to Corepack, enable it by adding the following environment variable in your Vercel project settings:
+   - **Key**: `ENABLE_EXPERIMENTAL_COREPACK`
+   - **Value**: `1`
+   
+   Also, ensure `packageManager` is set in `package.json`:
+   ```json
+   {
+     "packageManager": "pnpm@9"
+   }
+   ```
+
+### 🌍 Deploy CMS (Strapi) on Render Cloud
+
+1. Build the Strapi project:
+   ```sh
+   pnpm --filter @portfolio/cms build
+   ```
+2. Deploy to **Render Cloud** by creating a new **Web Service** and linking your repository.
+3. Set the required environment variables in Render for production.
+4. Start the service and verify deployment.
+
+## 📜 Individual READMEs
+
+Each application and shared package contains its own README:
+- `apps/web/README.md` → Details specific to the Next.js portfolio.
+- `apps/cms/README.md` → Documentation for the Strapi CMS setup and usage.
+- `packages/typescript-config/README.md` → Explanation of TypeScript configurations.
+- `packages/types/README.md` → Documentation on shared types and how to use them.
+
+## 🔗 Monorepo Starter Template
+
+This project is based on my **[Monorepo Starter Template](https://github.com/jamc96/monorepo-starter)**. You can check the latest changes and updates there.
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
