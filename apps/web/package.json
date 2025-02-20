@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "@monorepo/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -28,7 +28,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
+    "@monorepo/typescript-config": "workspace:*",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
