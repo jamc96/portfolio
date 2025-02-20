@@ -5,7 +5,7 @@ This is the **monorepo** for my personal portfolio, built using **Next.js** and 
 ## 📁 Structure
 
 ```
-portfolio-monorepo/
+portfolio/
 │── apps/
 │   ├── web/       # Next.js Portfolio Website
 │   ├── cms/       # Strapi CMS
