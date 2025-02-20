@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "git clean -xdf .turbo .next node_modules next-env.d.*"
   },
   "dependencies": {
     "@radix-ui/react-hover-card": "^1.1.6",
@@ -27,6 +28,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
