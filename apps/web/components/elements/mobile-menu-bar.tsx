@@ -43,7 +43,7 @@ export default function MobileMenuBar() {
               className='w-full flex flex-col gap-y-12'
               onClick={handleClick}
             >
-              <div className='mt-12 flex flex-col gap-y-6 text-24 px-6 font-semibold'>
+              <div className='mt-12 flex flex-col gap-y-6 text-16 px-6 font-semibold'>
                 <Link
                   className='px-6 py-2 inline-flex items-center justify-between text-foreground cursor-pointer bg-secondary rounded-md'
                   href='/projects'
