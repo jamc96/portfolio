@@ -16,7 +16,7 @@ export const Accordion = () => {
 
   return (
     <div className='flex flex-col w-full'>
-      <h3 className='inline-flex gap-8 p-6 self-center text-20 desktop:self-start'>
+      <h3 className='inline-flex items-center gap-8 p-4 self-center text-20 desktop:self-start'>
         <IconStarFilled className='text-foreground size-5' /> Featured Projects
       </h3>
       {projects.map(({ name, slug, description }, index) => {
