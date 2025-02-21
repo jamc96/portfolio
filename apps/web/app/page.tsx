@@ -8,10 +8,10 @@ export default function Home() {
     <>
       <section className='relative container py-24 desktop:py-0 desktop:flex desktop:flex-1 desktop:items-center'>
         <div className='flex flex-col items-center text-center desktop:w-3/5 desktop:flex-shrink-0 desktop:items-start desktop:text-start'>
-          <h3 className='text-20 font-normal text-neutral px-2'>
+          <h3 className='text-16 tablet:text-20 font-normal text-neutral px-2'>
             Building Smarter, Faster, Better
           </h3>
-          <h1 className='font-heading text-48 desktop:text-64 font-bold'>
+          <h1 className='font-heading text-40 tablet:text-48 desktop:text-64 font-bold'>
             Creating{' '}
             <br className='tablet:hidden'/>
             <WordRotate
