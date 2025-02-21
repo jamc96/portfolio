@@ -8,9 +8,9 @@ export default function Header({ children }: { children: React.ReactNode }) {
   return (
     <motion.header
       style={{ height }}
-      className={'w-full sticky top-0 z-50 bg-black'}
+      className={'w-full h-full sticky top-0 z-50 bg-black/75 border-black border-b '}
     >
-      <div className='h-full max-w-5xl flex items-center justify-between mx-auto px-8'>
+      <div className='h-full flex items-center justify-between mx-auto container'>
         {children}
       </div>
     </motion.header>

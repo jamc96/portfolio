@@ -10,6 +10,7 @@
     "clean": "git clean -xdf .turbo .next node_modules next-env.d.*"
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-hover-card": "^1.1.6",
     "@tabler/icons-react": "^3.29.0",
     "@uidotdev/usehooks": "^2.4.1",
@@ -19,7 +20,7 @@
     "framer-motion": "^12.4.1",
     "lucide-react": "^0.474.0",
     "mini-svg-data-uri": "^1.4.4",
-    "motion": "^12.0.6",
+    "motion": "^12.4.7",
     "next": "15.1.7",
     "qss": "^3.0.0",
     "react": "^19.0.0",

@@ -16,19 +16,19 @@ export default function DesktopMenuBar() {
       </Link>
       <div className='flex gap-x-2'>
         <Link target='_blank' href='https://x.com/jamcmejia1'>
-          <IconBrandX className='text-gray-200 hover:text-blue-500' />
+          <IconBrandX className='text-gray-200 hover:text-primary' />
         </Link>
         <Link
           target='_blank'
           href='https://www.linkedin.com/in/jose-alfredo-mejia'
         >
-          <IconBrandLinkedin className='text-gray-200 hover:text-blue-500' />
+          <IconBrandLinkedin className='text-gray-200 hover:text-primary' />
         </Link>
         <Link href='mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website'>
-          <IconBrandGmail className='text-gray-200 hover:text-blue-500' />
+          <IconBrandGmail className='text-gray-200 hover:text-primary' />
         </Link>
         <Link target='_blank' href='/cv_josemejia.pdf'>
-          <IconFileCv className='text-gray-200 hover:text-blue-500' />
+          <IconFileCv className='text-gray-200 hover:text-primary' />
         </Link>
       </div>
     </div>

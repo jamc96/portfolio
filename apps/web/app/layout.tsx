@@ -1,15 +1,19 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { PT_Sans, Nunito } from 'next/font/google';
 import './globals.css';
+import NavigationBar from '@/components/navigation-bar';
+import Footer from '@/components/footer';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const nunito = Nunito({
   subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  variable: '--font-nunito',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const ptSans = PT_Sans({
   subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-pt-sans',
 });
 
 export const metadata: Metadata = {
@@ -29,11 +33,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative flex flex-col min-h-screen`}
+        className={`${ptSans.variable} ${nunito.variable} antialiased relative flex flex-col min-h-screen font-body`}
       >
-        <main className='flex-1 bg-black flex flex-col items-center justify-center'>
-          {children}
-        </main>
+        <NavigationBar />
+        <main className='relative flex-1 flex flex-col'>{children}</main>
+        <Footer />
       </body>
     </html>
   );

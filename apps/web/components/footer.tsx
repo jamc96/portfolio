@@ -1,14 +1,19 @@
+import { IconCode } from '@tabler/icons-react';
 import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className='h-16 w-full bg-black flex items-center justify-center text-neutral-200 space-x-2 text-sm sm:text-base'>
+    <footer className='h-12 w-full  flex items-center justify-center text-foreground space-x-2 bg-black'>
       <p>©</p>
       <span className='font-bold'>2025</span>
       <Link
         target='_blank'
         href='https://github.com/jamc96/portfolio'
-      >{`— Built by Jose Mejia`}</Link>
+        className='inline-flex gap-x-2 items-center'
+      >
+        {'|'}
+        <IconCode className='size-4 hover:text-foreground' />
+      </Link>
     </footer>
   );
 }

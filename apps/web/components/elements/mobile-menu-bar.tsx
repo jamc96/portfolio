@@ -29,7 +29,7 @@ export default function MobileMenuBar() {
     >
       <div className='flex justify-end z-20 w-full'>
         <IconMenu2
-          className='text-gray-200 hover:text-blue-500 cursor-pointer'
+          className='text-gray-200 hover:text-primary cursor-pointer'
           onClick={() => setOpen(!open)}
         />
       </div>
@@ -59,19 +59,19 @@ export default function MobileMenuBar() {
               </div>
               <div className='flex gap-x-2 items-center justify-center'>
                 <Link target='_blank' href='https://x.com/jamcmejia1'>
-                  <IconBrandX className='text-gray-200 hover:text-blue-500' />
+                  <IconBrandX className='text-gray-200 hover:text-primary' />
                 </Link>
                 <Link
                   target='_blank'
                   href='https://www.linkedin.com/in/jose-alfredo-mejia'
                 >
-                  <IconBrandLinkedin className='text-gray-200 hover:text-blue-500' />
+                  <IconBrandLinkedin className='text-gray-200 hover:text-primary' />
                 </Link>
                 <Link href='mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website'>
-                  <IconBrandGmail className='text-gray-200 hover:text-blue-500' />
+                  <IconBrandGmail className='text-gray-200 hover:text-primary' />
                 </Link>
                 <Link target='_blank' href='/cv_josemejia.pdf'>
-                  <IconFileCv className='text-gray-200 hover:text-blue-500' />
+                  <IconFileCv className='text-gray-200 hover:text-primary' />
                 </Link>
               </div>
             </div>

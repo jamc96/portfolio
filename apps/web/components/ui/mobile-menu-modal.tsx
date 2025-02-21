@@ -26,7 +26,7 @@ export default function MobileMenuModal({
       }
     >
       <button
-        className='absolute right-4 top-5 z-50 text-neutral-200 dark:text-neutral-200 border border-gray-200 py-2 px-4 hover:text-blue-500'
+        className='absolute right-4 top-5 z-50 text-neutral-200 dark:text-neutral-200 border border-gray-200 py-2 px-4 hover:text-primary'
         onClick={() => setOpen(false)}
       >
         <IconX />
