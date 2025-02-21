@@ -1,18 +1,15 @@
 'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 export default function Header({ children }: { children: React.ReactNode }) {
-  const { scrollY } = useScroll();
-  const scrollYRange = [0, 100];
-  const height = useTransform(scrollY, scrollYRange, ['80px', '56px']);
-
   return (
     <motion.header
-      style={{ height }}
-      className={'w-full h-full sticky top-0 z-50 bg-black/75 border-black border-b '}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className={
+        'w-full sticky top-0 z-40 inset-x-0 flex items-center justify-between container pt-4 tablet:pt-10 bg-background/75 backdrop-blur-lg border-b border-background'
+      }
     >
-      <div className='h-full flex items-center justify-between mx-auto container'>
-        {children}
-      </div>
+      {children}
     </motion.header>
   );
 }

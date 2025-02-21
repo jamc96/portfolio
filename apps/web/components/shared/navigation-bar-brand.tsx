@@ -12,9 +12,9 @@ export default function NavigationBarBrand({
         'flex flex-col': !orientation || orientation === 'vertical',
       })}
     >
-      <Link href='/' className='flex flex-col items-start'>
-        <p className='text-40 font-heading font-extrabold text-foreground'>
-          Jose<span className='text-primary'>Mejia</span>
+      <Link href='/' className='flex flex-col items-start group'>
+        <p className='text-40 font-heading font-extrabold text-foreground group-hover:bg-primary px-4 py-2 rounded-lg'>
+          Jose<span className='text-primary group-hover:text-foreground'>Mejia</span>
         </p>
       </Link>
     </div>

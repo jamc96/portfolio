@@ -4,6 +4,8 @@ import { IconStarFilled } from '@tabler/icons-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '../ui/button';
 
 export const Accordion = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
@@ -14,7 +16,7 @@ export const Accordion = () => {
 
   return (
     <div className='flex flex-col w-full'>
-      <h3 className='inline-flex gap-8 p-6 self-center text-20 items-center'>
+      <h3 className='inline-flex gap-8 p-6 self-center text-20 desktop:self-start'>
         <IconStarFilled className='text-foreground size-5' /> Featured Projects
       </h3>
       {projects.map(({ name, slug, description }, index) => {
@@ -44,7 +46,10 @@ export const Accordion = () => {
                     <span className='text-16 font-normal'>{description}</span>
                     <Link
                       href={`/projects/${slug}`}
-                      className='flex-shrink-0 place-self-end '
+                      className={cn(
+                        'flex-shrink-0 place-self-end cursor-pointer',
+                        buttonVariants({ variant: 'navigation-link' })
+                      )}
                     >
                       see more
                     </Link>

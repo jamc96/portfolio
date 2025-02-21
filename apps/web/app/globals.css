@@ -15,7 +15,7 @@
     --secondary: 228 59% 21%;
     --secondary-foreground: 267 87% 40%;
     --neutral: 218 22% 65%;
-    --neutral-foreground: 228 59% 21%;
+    --neutral-foreground: 227 92% 5%;
     --muted: 228 59% 21%;
     --muted-foreground: 218 22% 65%%;
     --accent: 228 59% 21%;
@@ -44,7 +44,7 @@
     --secondary: 228 59% 21%;
     --secondary-foreground: 267 87% 40%;
     --neutral: 218 22% 65%;
-    --neutral-foreground: 228 59% 21%;
+    --neutral-foreground: 227 92% 5%;
     --muted: 228 59% 21%;
     --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 228 59% 21%;
@@ -66,6 +66,17 @@
 @layer base {
   * {
     @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;

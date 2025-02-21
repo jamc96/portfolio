@@ -105,7 +105,7 @@ export default {
     	screens: {
     		mobile: '430px',
     		tablet: '768px',
-    		desktop: '1028px',
+    		desktop: '1280px',
     		desktopL: '1440px'
     	},
     	container: {
@@ -113,7 +113,7 @@ export default {
     		padding: {
     			DEFAULT: '1rem',
     			mobile: '1rem',
-    			tablet: '2.5rem',
+    			tablet: '2rem',
     			desktop: '5rem'
     		}
     	}

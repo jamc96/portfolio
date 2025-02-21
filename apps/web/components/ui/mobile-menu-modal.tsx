@@ -3,6 +3,7 @@ import { IconX } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import { Dispatch, SetStateAction } from 'react';
 import { useLockBodyScroll } from '@uidotdev/usehooks';
+import NavigationBarBrand from '../shared/navigation-bar-brand';
 
 export default function MobileMenuModal({
   setOpen,
@@ -22,15 +23,19 @@ export default function MobileMenuModal({
         ease: 'easeInOut',
       }}
       className={
-        'fixed h-full w-full inset-0 bg-black p-4 z-[100] flex flex-col'
+        'fixed min-h-screen h-full w-full inset-0 bg-background z-50 flex flex-col'
       }
     >
-      <button
-        className='absolute right-4 top-5 z-50 text-neutral-200 dark:text-neutral-200 border border-gray-200 py-2 px-4 hover:text-primary'
-        onClick={() => setOpen(false)}
-      >
-        <IconX />
-      </button>
+      <div className='z-50 px-4 mt-4 container flex items-center justify-between'>
+        <NavigationBarBrand />
+
+        <button
+          className='flex-shrink-0 text-foreground dark:text-foreground border border-foreground py-2 px-4 hover:text-primary'
+          onClick={() => setOpen(false)}
+        >
+          <IconX />
+        </button>
+      </div>
       {children}
     </motion.div>
   );
