@@ -1,4 +1,3 @@
-import { projects } from '@/lib/constants';
 import { IconStarFilled } from '@tabler/icons-react';
 import Link from 'next/link';
 import { buttonVariants } from '../ui/button';
@@ -9,8 +8,10 @@ import {
   AccordionItem,
 } from '../elements/accordion';
 import { cn } from '@/lib/utils';
+import { getFeaturedProjects } from '@/app/action/projects';
 
-export const FeaturedProjects = () => {
+export const FeaturedProjects = async () => {
+  const projects = await getFeaturedProjects();
   return (
     <div className='flex flex-col w-full'>
       <h3 className='inline-flex items-center gap-8 p-4 self-center text-20 desktop:self-start'>

@@ -1,6 +1,13 @@
-import { FeaturedProjects } from '@/components/shared/featured-projects';
+import { FilteredProjects } from '@/components/shared/filtered-projects';
 
-export default function Projects() {
+type SearchParams = Promise<{ type: string }>;
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  const query = await searchParams;
+
   return (
     <>
       <section className='relative container py-24'>
@@ -8,7 +15,8 @@ export default function Projects() {
           <h1 className='font-heading text-40 tablet:text-48 desktop:text-64 font-bold'>
             Projects
           </h1>
-          <FeaturedProjects />
+
+          <FilteredProjects query={query} />
         </div>
       </section>
     </>
