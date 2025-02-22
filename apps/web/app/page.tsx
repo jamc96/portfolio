@@ -1,5 +1,5 @@
 import { WordRotate } from '@/components/magicui/word-rotate';
-import { Accordion } from '@/components/shared/accordion';
+import { FeaturedProjects } from '@/components/shared/featured-projects';
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
 import Link from 'next/link';
 
@@ -12,8 +12,7 @@ export default function Home() {
             Building Smarter, Faster, Better
           </h3>
           <h1 className='font-heading text-40 tablet:text-48 desktop:text-64 font-bold'>
-            Creating{' '}
-            <br className='tablet:hidden'/>
+            Creating <br className='tablet:hidden' />
             <WordRotate
               className='bg-primary inline-flex px-2 py-1 rounded-sm overflow-hidden'
               words={[
@@ -23,8 +22,8 @@ export default function Home() {
                 'Next-Gen',
                 'Cutting-Edge',
               ]}
-            /><br/> {' '}
-            Digital Solutions
+            />
+            <br /> Digital Solutions
           </h1>
           <Link href='/' className='mt-8 p-1 relative group'>
             <div className='absolute inset-0 bg-gradient-to-r from-primary to-neutral rounded-lg' />
@@ -44,11 +43,11 @@ export default function Home() {
           </Link>
         </div>
         <div className='hidden desktop:block'>
-          <Accordion />
+          <FeaturedProjects />
         </div>
       </section>
       <section className='relative container desktop:hidden'>
-        <Accordion />
+        <FeaturedProjects />
       </section>
     </>
   );
