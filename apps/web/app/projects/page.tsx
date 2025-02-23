@@ -6,7 +6,7 @@ import {
 export default async function Page({
   searchParams,
 }: {
-  searchParams: SearchParams;
+  searchParams: Promise<SearchParams>;
 }) {
   const query = await searchParams;
 
