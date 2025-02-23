@@ -5,6 +5,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
     <motion.header
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
       className={
         'w-full sticky top-0 z-40 inset-x-0 flex items-center justify-between container pt-4 tablet:pt-10 bg-background/75 backdrop-blur-lg border-b border-background'
       }

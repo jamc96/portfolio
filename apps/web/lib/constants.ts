@@ -1,6 +1,7 @@
 
 export const projects = [
     {
+        id: 0,
         name: 'Website Redisign',
         description:
             'Led a complete redesign of the platform, focusing on high availability, performance and SEO improvements. Delivered interactive pages like weddings and resorts to create a seamless user experience.',
@@ -14,6 +15,7 @@ export const projects = [
         featured: true,
     },
     {
+        id: 1,
         name: 'Nonprofit Foundation',
         description:
             'Enhanced the user experience for donors and content administators, providing a fully modern responsive interface with integrations for blogging and payment processing.',
@@ -27,19 +29,21 @@ export const projects = [
         featured: true,
     },
     {
+        id: 3,
         name: 'Software Automation',
         description:
             'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.',
         url: null,
-        image: '/blog.png',
+        image: null,
         label: 'beaches.co.uk',
         skills: ['Next.js', 'React', 'Strapi', 'Tailwindcss', 'Docker', 'Node', 'Kubernetes', 'Typescript'],
         categories: ['Development', 'DevOps', 'Leadership', 'UI/UX', 'SEO', 'Performance', 'Brand'],
-        slug: 'blogs-enhacement',
+        slug: 'software-automation',
         type: 'automation',
         featured: true,
     },
     {
+        id: 4,
         name: 'Blogs Enhancement',
         description:
             'Developed the rebranded blog with a modern UI/UX, integrating SEO and performance optimizations while restructuring content to enhance user engagement and the reading experience.',
@@ -53,15 +57,16 @@ export const projects = [
         featured: false,
     },
     {
+        id: 5,
         name: 'Content Management',
         description:
             'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.',
         url: null,
-        image: '/blog.png',
+        image: null,
         label: 'beaches.co.uk',
         skills: ['Next.js', 'React', 'Strapi', 'Tailwindcss', 'Docker', 'Node', 'Kubernetes', 'Typescript'],
         categories: ['Development', 'DevOps', 'Leadership', 'UI/UX', 'SEO', 'Performance', 'Brand'],
-        slug: 'blogs-enhacement',
+        slug: 'content-management',
         type: 'automation',
         featured: false,
     },

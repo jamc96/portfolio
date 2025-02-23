@@ -1,6 +1,8 @@
-import { FilteredProjects } from '@/components/shared/filtered-projects';
+import {
+  FilteredProjects,
+  SearchParams,
+} from '@/components/shared/filtered-projects';
 
-type SearchParams = Promise<{ type: string }>;
 export default async function Page({
   searchParams,
 }: {
@@ -10,9 +12,9 @@ export default async function Page({
 
   return (
     <>
-      <section className='relative container py-24'>
-        <div className='flex flex-col gap-y-8 items-center '>
-          <h1 className='font-heading text-40 tablet:text-48 desktop:text-64 font-bold'>
+      <section className='relative w-full container desktop:pl-0'>
+        <div className='flex flex-col gap-y-8 items-center pt-24 desktop:gap-0'>
+          <h1 className='font-heading text-40 tablet:text-48 font-bold desktop:w-2/5 desktop:self-end'>
             Projects
           </h1>
 

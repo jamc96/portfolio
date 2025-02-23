@@ -18,6 +18,7 @@ type AccordionProps = {
 type AccordionItemProps = {
   index: number;
   children: ReactNode;
+  className?: string;
 };
 
 type AccordionHeaderProps = {
@@ -44,9 +45,14 @@ export const Accordion = ({ children }: AccordionProps) => {
   );
 };
 
-export const AccordionItem = ({ index, children }: AccordionItemProps) => {
+export const AccordionItem = ({
+  index,
+  children,
+  className,
+}: AccordionItemProps) => {
   const context = useContext(AccordionContext);
-  if (!context) throw new Error('AccordionItem must be used within an Accordion');
+  if (!context)
+    throw new Error('AccordionItem must be used within an Accordion');
   const { openIndex } = context;
   const isOpen = openIndex === index;
 
@@ -54,6 +60,7 @@ export const AccordionItem = ({ index, children }: AccordionItemProps) => {
     <div
       className={cn(
         'p-6 rounded-md overflow-hidden transition-colors duration-500 ease-in-out',
+        className,
         isOpen ? 'bg-secondary' : 'bg-transparent'
       )}
     >
@@ -61,7 +68,6 @@ export const AccordionItem = ({ index, children }: AccordionItemProps) => {
     </div>
   );
 };
-
 
 export const AccordionHeader = ({ index, children }: AccordionHeaderProps) => {
   const context = useContext(AccordionContext);
@@ -101,7 +107,7 @@ export const AccordionContent = ({
           animate={{ opacity: 1, maxHeight: 300 }}
           exit={{ opacity: 0, maxHeight: 0 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className='pt-2 overflow-hidden'
+          className='pt-2 '
         >
           {children}
         </motion.div>

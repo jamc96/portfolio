@@ -8,72 +8,117 @@ import {
 } from '../elements/accordion';
 import { cn } from '@/lib/utils';
 import { getAllProjects, getProyectTypes } from '@/app/action/projects';
+import Image from 'next/image';
+import { TextGenerateEffect } from '../ui/text-generate-effect';
+import AnimateEntrance from '../elements/animate-entrance';
 
+export type SearchParams = { type: string; project?: string };
 interface FilteredProjects {
-  query: { type: string };
+  query: SearchParams;
 }
+
 export const FilteredProjects = async ({ query }: FilteredProjects) => {
-  const filter =
-    !Object.keys(query).length || query.type === 'all' ? undefined : query;
-  const projects = await getAllProjects({ query: filter });
+  const queryType =
+    !query.type || query.type === 'all' ? undefined : { type: query.type };
+  const projects = await getAllProjects({ query: queryType });
   const types = await getProyectTypes();
+
+  const selectedProject =
+    projects.find((p) => p.slug === query.project) || projects[0];
+
   return (
-    <div className='flex flex-col w-full gap-y-4 desktop:w-1/2'>
-      <div className='flex items-center justify-between'>
-        <Link
-          href={`/projects/?type=all`}
-          className={cn(
-            'flex-shrink-0 place-self-end cursor-pointer',
-            buttonVariants({ variant: 'navigation-link' })
-          )}
-        >
-          All
-        </Link>
-        <div className='space-x-2'>
-          {types.map(({ name, slug, color }, index) => (
-            <Link
-              key={`type-${index}`}
-              href={`/projects/?type=${slug}`}
-              className={cn(
-                'flex-shrink-0 place-self-end cursor-pointer',
-                {
-                  'bg-[#84BE7E]': color === 'green',
-                  'bg-[#9873C6]': color === 'purple',
-                },
-                buttonVariants({ variant: 'navigation-link' })
-              )}
-            >
-              {name}
-            </Link>
-          ))}
+    <div className='w-full flex flex-col desktop:flex-row desktop:justify-between desktop:items-center gap-x-16'>
+      <div className='flex-1 h-[32rem] w-full relative hidden desktop:inline-flex'>
+        {selectedProject?.image ? (
+          <AnimateEntrance>
+            <Image
+              src={selectedProject.image}
+              alt='project image'
+              className='w-full h-full rounded-tr-lg'
+              fill
+            />
+          </AnimateEntrance>
+        ) : (
+          <div className='w-full bg-neutral inline-flex items-center justify-center rounded-tr-lg'>
+            <TextGenerateEffect words='Coming Soon..' />
+          </div>
+        )}
+      </div>
+      <div className='flex flex-col w-full gap-y-4 desktop:w-2/5 desktop:flex-shrink-0'>
+        <div className='flex items-center justify-between'>
+          <Link
+            href={{
+              pathname: '/projects/',
+              query: { type: 'all', project: selectedProject.slug },
+            }}
+            className={cn(
+              'flex-shrink-0 place-self-end cursor-pointer',
+              buttonVariants({ variant: 'navigation-link' })
+            )}
+          >
+            {`All (${projects.length})`}
+          </Link>
+          <div className='space-x-2'>
+            {types.map(({ name, slug, color }, index) => (
+              <Link
+                key={`type-${index}`}
+                href={{
+                  pathname: '/projects/',
+                  query: { type: slug, project: selectedProject.slug },
+                }}
+                className={cn(
+                  'flex-shrink-0 place-self-end cursor-pointer',
+                  {
+                    'bg-[#84BE7E]': color === 'green',
+                    'bg-[#9873C6]': color === 'purple',
+                  },
+                  buttonVariants({ variant: 'navigation-link' })
+                )}
+              >
+                {name}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className='desktop:h-[30rem] overflow-y-auto'>
+          <Accordion>
+            {projects.map(({ name, slug, description, id }, index) => (
+              <AccordionItem key={`accordion-${index}`} index={id}>
+                <AccordionHeader index={id}>
+                  <Link
+                    href={{
+                      pathname: '/projects/',
+                      query: {
+                        type: query?.type || 'all',
+                        project: slug,
+                      },
+                    }}
+                  >
+                    <span className='pr-8'>
+                      {(index + 1).toString().padStart(2, '0')}
+                    </span>
+                    {name}
+                  </Link>
+                </AccordionHeader>
+                <AccordionContent index={id}>
+                  <div className='flex flex-col justify-end'>
+                    <span className='text-16 font-normal'>{description}</span>
+                    <Link
+                      href={`/projects/${slug}`}
+                      className={cn(
+                        'flex-shrink-0 place-self-end cursor-pointer',
+                        buttonVariants({ variant: 'navigation-link' })
+                      )}
+                    >
+                      see more
+                    </Link>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
-      <Accordion>
-        {projects.map(({ name, slug, description }, index) => (
-          <AccordionItem key={`accordion-${index}`} index={index}>
-            <AccordionHeader index={index}>
-              <span className='pr-8'>
-                {(index + 1).toString().padStart(2, '0')}
-              </span>
-              {name}
-            </AccordionHeader>
-            <AccordionContent index={index}>
-              <div className='flex flex-col justify-end'>
-                <span className='text-16 font-normal'>{description}</span>
-                <Link
-                  href={`/projects/${slug}`}
-                  className={cn(
-                    'flex-shrink-0 place-self-end cursor-pointer',
-                    buttonVariants({ variant: 'navigation-link' })
-                  )}
-                >
-                  see more
-                </Link>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
     </div>
   );
 };
