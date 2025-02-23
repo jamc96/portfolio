@@ -27,8 +27,10 @@ export const FeaturedProjects = async () => {
               {name}
             </AccordionHeader>
             <AccordionContent index={index}>
-              <div className="flex flex-col justify-end">
-                <span className="text-16 font-normal">{description}</span>
+              <div className="flex flex-col justify-end gap-y-2">
+                <span className="line-clamp-5 text-16 font-normal tablet:line-clamp-3">
+                  {description}
+                </span>
                 <Link
                   href={`/projects/${slug}`}
                   className={cn(

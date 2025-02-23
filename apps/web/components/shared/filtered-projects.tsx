@@ -28,7 +28,7 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
 
   return (
     <div className="flex w-full flex-col gap-x-16 desktop:flex-row desktop:items-center desktop:justify-between">
-      <div className="relative hidden h-[32rem] w-full flex-1 desktop:inline-flex">
+      <div className="relative -mx-[2rem] hidden h-[32rem] w-full flex-1 desktop:inline-flex">
         {selectedProject?.image ? (
           <AnimateEntrance>
             <Image
@@ -101,8 +101,10 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
                   </Link>
                 </AccordionHeader>
                 <AccordionContent index={id}>
-                  <div className="flex flex-col justify-end">
-                    <span className="text-16 font-normal">{description}</span>
+                  <div className="flex flex-col justify-end gap-y-2">
+                    <span className="line-clamp-5 text-16 font-normal tablet:line-clamp-3">
+                      {description}
+                    </span>
                     <Link
                       href={`/projects/${slug}`}
                       className={cn(

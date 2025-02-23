@@ -15,6 +15,10 @@ export async function getAllProjects({ query }: allProjectsProps) {
     return projects;
 }
 
+export async function getProjectBySlug({ slug }: { slug: string }) {
+    return projects.find(({ slug: projectSlug }) => projectSlug === slug);
+}
+
 export async function getFeaturedProjects() {
     return projects.filter(({ featured }) => featured === true);
 }
