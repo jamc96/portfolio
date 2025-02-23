@@ -1,5 +1,5 @@
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
 export default function Header({ children }: { children: React.ReactNode }) {
   return (
     <motion.header
@@ -7,7 +7,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className={
-        'w-full sticky top-0 z-40 inset-x-0 flex items-center justify-between container pt-4 tablet:pt-10 bg-background/75 backdrop-blur-lg border-b border-background'
+        "container sticky inset-x-0 top-0 z-40 flex w-full items-center justify-between border-b border-background bg-background/75 pt-4 backdrop-blur-lg tablet:pt-10"
       }
     >
       {children}

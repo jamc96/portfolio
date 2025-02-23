@@ -36,15 +36,15 @@ export function WordRotate({
 
   return (
     // <div className="overflow-hidden py-2">
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={words[index]}
-          className={cn(className)}
-          {...motionProps}
-        >
-          {words[index]}
-        </motion.span>
-      </AnimatePresence>
+    <AnimatePresence mode="wait">
+      <motion.span
+        key={words[index]}
+        className={cn(className)}
+        {...motionProps}
+      >
+        {words[index]}
+      </motion.span>
+    </AnimatePresence>
     // </div>
   );
 }

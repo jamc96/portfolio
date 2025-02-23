@@ -1,8 +1,8 @@
-import { TextGenerateEffect } from '../ui/text-generate-effect';
+import { TextGenerateEffect } from "../ui/text-generate-effect";
 
 const ComingSoonText = () => (
-  <div className='flex-1 h-full w-full flex flex-col items-center justify-center'>
-    <TextGenerateEffect words='Coming Soon..' />
+  <div className="flex h-full w-full flex-1 flex-col items-center justify-center">
+    <TextGenerateEffect words="Coming Soon.." />
   </div>
 );
 

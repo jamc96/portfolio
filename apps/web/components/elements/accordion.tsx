@@ -1,7 +1,7 @@
-'use client';
-import { cn } from '@/lib/utils';
-import { AnimatePresence, motion } from 'framer-motion';
-import { createContext, ReactNode, useContext, useState } from 'react';
+"use client";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import { createContext, ReactNode, useContext, useState } from "react";
 
 type AccordionContextType = {
   openIndex: number | null;
@@ -39,7 +39,7 @@ export const Accordion = ({ children }: AccordionProps) => {
 
   return (
     <AccordionContext.Provider value={{ openIndex, toggleIndex }}>
-      <div className='flex flex-col w-full'>{children}</div>
+      <div className="flex w-full flex-col">{children}</div>
     </AccordionContext.Provider>
   );
 };
@@ -51,16 +51,16 @@ export const AccordionItem = ({
 }: AccordionItemProps) => {
   const context = useContext(AccordionContext);
   if (!context)
-    throw new Error('AccordionItem must be used within an Accordion');
+    throw new Error("AccordionItem must be used within an Accordion");
   const { openIndex } = context;
   const isOpen = openIndex === index;
 
   return (
     <div
       className={cn(
-        'p-6 rounded-md overflow-hidden transition-colors duration-500 ease-in-out',
+        "overflow-hidden rounded-md p-6 transition-colors duration-500 ease-in-out",
         className,
-        isOpen ? 'bg-secondary' : 'bg-transparent'
+        isOpen ? "bg-secondary" : "bg-transparent",
       )}
     >
       {children}
@@ -71,15 +71,15 @@ export const AccordionItem = ({
 export const AccordionHeader = ({ index, children }: AccordionHeaderProps) => {
   const context = useContext(AccordionContext);
   if (!context)
-    throw new Error('AccordionHeader must be used within an Accordion');
+    throw new Error("AccordionHeader must be used within an Accordion");
   const { openIndex, toggleIndex } = context;
   const isOpen = openIndex === index;
 
   return (
     <div
       className={cn(
-        'font-bold text-20 cursor-pointer transition duration-300',
-        isOpen ? 'bg-secondary delay-200' : 'bg-transparent'
+        "cursor-pointer text-20 font-bold transition duration-300",
+        isOpen ? "bg-secondary delay-200" : "bg-transparent",
       )}
       onClick={() => toggleIndex(index)}
     >
@@ -94,7 +94,7 @@ export const AccordionContent = ({
 }: AccordionContentProps) => {
   const context = useContext(AccordionContext);
   if (!context)
-    throw new Error('AccordionContent must be used within an Accordion');
+    throw new Error("AccordionContent must be used within an Accordion");
   const { openIndex } = context;
   const isOpen = openIndex === index;
 
@@ -105,8 +105,8 @@ export const AccordionContent = ({
           initial={{ opacity: 0, maxHeight: 0 }}
           animate={{ opacity: 1, maxHeight: 300 }}
           exit={{ opacity: 0, maxHeight: 0 }}
-          transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className='pt-2 '
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="pt-2"
         >
           {children}
         </motion.div>

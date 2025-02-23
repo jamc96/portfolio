@@ -1,38 +1,38 @@
-'use client';
-import { cn } from '@/lib/utils';
+"use client";
+import { cn } from "@/lib/utils";
 import {
-    IconBrandGmail,
-    IconBrandLinkedin,
-    IconBrandX,
-    IconComponents,
-    IconFileCv,
-    IconMenu2,
-    IconUser,
-} from '@tabler/icons-react';
-import { AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
-import { useState } from 'react';
-import { buttonVariants } from '../ui/button';
-import MobileMenuModal from '../ui/mobile-menu-modal';
+  IconBrandGmail,
+  IconBrandLinkedin,
+  IconBrandX,
+  IconComponents,
+  IconFileCv,
+  IconMenu2,
+  IconUser,
+} from "@tabler/icons-react";
+import { AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { useState } from "react";
+import { buttonVariants } from "../ui/button";
+import MobileMenuModal from "../ui/mobile-menu-modal";
 
 export default function MobileMenuBar() {
   const [open, setOpen] = useState(false);
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const target = event.target as HTMLElement;
-    if (target.closest('a')) {
+    if (target.closest("a")) {
       setOpen(false);
     }
   };
   return (
     <div
       className={
-        'flex-none h-10 py-2 px-4 flex flex-row tablet:hidden items-center justify-between border border-gray-200 '
+        "flex h-10 flex-none flex-row items-center justify-between border border-gray-200 px-4 py-2 tablet:hidden"
       }
     >
-      <div className='flex justify-end z-50 w-full'>
+      <div className="z-50 flex w-full justify-end">
         <IconMenu2
-          className='text-gray-200 hover:text-primary cursor-pointer'
+          className="cursor-pointer text-gray-200 hover:text-primary"
           onClick={() => setOpen(!open)}
         />
       </div>
@@ -40,52 +40,52 @@ export default function MobileMenuBar() {
         {open && (
           <MobileMenuModal setOpen={setOpen}>
             <div
-              className='w-full flex flex-col gap-y-12'
+              className="flex w-full flex-col gap-y-12"
               onClick={handleClick}
             >
-              <div className='mt-12 flex flex-col gap-y-6 text-16 px-6 font-semibold'>
+              <div className="mt-12 flex flex-col gap-y-6 px-6 text-16 font-semibold">
                 <Link
-                  className='px-6 py-2 inline-flex items-center justify-between text-foreground cursor-pointer bg-secondary rounded-md'
-                  href='/projects'
+                  className="inline-flex cursor-pointer items-center justify-between rounded-md bg-secondary px-6 py-2 text-foreground"
+                  href="/projects"
                 >
                   Projects
                   <IconComponents />
                 </Link>
                 <Link
-                  className='px-6 py-2 inline-flex items-center justify-between text-foreground cursor-pointer bg-secondary rounded-md'
-                  href='/about'
+                  className="inline-flex cursor-pointer items-center justify-between rounded-md bg-secondary px-6 py-2 text-foreground"
+                  href="/about"
                 >
                   About
                   <IconUser />
                 </Link>
               </div>
-              <div className='w-full flex flex-col gap-y-8'>
+              <div className="flex w-full flex-col gap-y-8">
                 <Link
-                  href='mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website'
+                  href="mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website"
                   className={cn(
-                    'mx-6',
+                    "mx-6",
                     buttonVariants({
-                      size: 'lg',
-                    })
+                      size: "lg",
+                    }),
                   )}
                 >
                   Get in touch
                 </Link>
-                <div className='flex gap-x-2 items-center justify-center'>
-                  <Link target='_blank' href='https://x.com/jamcmejia1'>
-                    <IconBrandX className='text-gray-200 hover:text-primary' />
+                <div className="flex items-center justify-center gap-x-2">
+                  <Link target="_blank" href="https://x.com/jamcmejia1">
+                    <IconBrandX className="text-gray-200 hover:text-primary" />
                   </Link>
                   <Link
-                    target='_blank'
-                    href='https://www.linkedin.com/in/jose-alfredo-mejia'
+                    target="_blank"
+                    href="https://www.linkedin.com/in/jose-alfredo-mejia"
                   >
-                    <IconBrandLinkedin className='text-gray-200 hover:text-primary' />
+                    <IconBrandLinkedin className="text-gray-200 hover:text-primary" />
                   </Link>
-                  <Link href='mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website'>
-                    <IconBrandGmail className='text-gray-200 hover:text-primary' />
+                  <Link href="mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website">
+                    <IconBrandGmail className="text-gray-200 hover:text-primary" />
                   </Link>
-                  <Link target='_blank' href='/cv_josemejia.pdf'>
-                    <IconFileCv className='text-gray-200 hover:text-primary' />
+                  <Link target="_blank" href="/cv_josemejia.pdf">
+                    <IconFileCv className="text-gray-200 hover:text-primary" />
                   </Link>
                 </div>
               </div>
