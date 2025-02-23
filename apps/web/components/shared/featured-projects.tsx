@@ -1,14 +1,14 @@
+import { getFeaturedProjects } from '@/app/action/projects';
+import { cn } from '@/lib/utils';
 import { IconStarFilled } from '@tabler/icons-react';
 import Link from 'next/link';
-import { buttonVariants } from '../ui/button';
 import {
   Accordion,
   AccordionContent,
   AccordionHeader,
   AccordionItem,
 } from '../elements/accordion';
-import { cn } from '@/lib/utils';
-import { getFeaturedProjects } from '@/app/action/projects';
+import { buttonVariants } from '../ui/button';
 
 export const FeaturedProjects = async () => {
   const projects = await getFeaturedProjects();

@@ -1,8 +1,8 @@
 'use client';
 import { IconX } from '@tabler/icons-react';
+import { useLockBodyScroll } from '@uidotdev/usehooks';
 import { motion } from 'framer-motion';
 import { Dispatch, SetStateAction } from 'react';
-import { useLockBodyScroll } from '@uidotdev/usehooks';
 import NavigationBarBrand from '../shared/navigation-bar-brand';
 
 export default function MobileMenuModal({

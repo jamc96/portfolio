@@ -1,8 +1,7 @@
 'use client';
-
-import { createContext, useContext, useState, ReactNode } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'framer-motion';
+import { createContext, ReactNode, useContext, useState } from 'react';
 
 type AccordionContextType = {
   openIndex: number | null;

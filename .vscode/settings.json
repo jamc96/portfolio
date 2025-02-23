@@ -1,7 +1,14 @@
 {
   "eslint.workingDirectories": [
     {
-      "mode": "auto"
+      "mode": "auto",
     }
-  ]
+  ],
+
+  "editor.codeActionsOnSave": {
+  "source.formatDocument": true,
+  "source.fixAll.eslint": true,
+  "source.organizeimports": true
+}
+
 }

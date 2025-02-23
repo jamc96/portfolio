@@ -1,16 +1,16 @@
+import { getAllProjects, getProyectTypes } from '@/app/action/projects';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
 import Link from 'next/link';
-import { buttonVariants } from '../ui/button';
 import {
   Accordion,
   AccordionContent,
   AccordionHeader,
   AccordionItem,
 } from '../elements/accordion';
-import { cn } from '@/lib/utils';
-import { getAllProjects, getProyectTypes } from '@/app/action/projects';
-import Image from 'next/image';
-import { TextGenerateEffect } from '../ui/text-generate-effect';
 import AnimateEntrance from '../elements/animate-entrance';
+import { buttonVariants } from '../ui/button';
+import { TextGenerateEffect } from '../ui/text-generate-effect';
 
 export type SearchParams = { type: string; project?: string };
 interface FilteredProjects {

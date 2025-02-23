@@ -1,19 +1,19 @@
 'use client';
+import { cn } from '@/lib/utils';
 import {
-  IconBrandGmail,
-  IconBrandLinkedin,
-  IconBrandX,
-  IconComponents,
-  IconFileCv,
-  IconMenu2,
-  IconUser,
+    IconBrandGmail,
+    IconBrandLinkedin,
+    IconBrandX,
+    IconComponents,
+    IconFileCv,
+    IconMenu2,
+    IconUser,
 } from '@tabler/icons-react';
 import { AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
-import MobileMenuModal from '../ui/mobile-menu-modal';
 import Link from 'next/link';
+import { useState } from 'react';
 import { buttonVariants } from '../ui/button';
-import { cn } from '@/lib/utils';
+import MobileMenuModal from '../ui/mobile-menu-modal';
 
 export default function MobileMenuBar() {
   const [open, setOpen] = useState(false);

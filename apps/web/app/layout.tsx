@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
-import { PT_Sans, Nunito } from 'next/font/google';
-import './globals.css';
-import NavigationBar from '@/components/navigation-bar';
 import Footer from '@/components/footer';
+import NavigationBar from '@/components/navigation-bar';
+import type { Metadata } from 'next';
+import { Nunito, PT_Sans } from 'next/font/google';
+import './globals.css';
 
 const nunito = Nunito({
   subsets: ['latin'],
