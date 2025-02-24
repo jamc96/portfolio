@@ -59,7 +59,7 @@ export default function About() {
             Download Resume
           </Link>
           {/* Extra details */}
-          <div className="flex flex-col items-center gap-y-4 rounded-t-md bg-secondary px-4 py-6">
+          <div className="flex flex-col items-center gap-y-4 rounded-t-md bg-secondary px-4 py-6 text-secondary-foreground">
             {/* Content blocks */}
             <ContentBlock
               items={[
@@ -79,7 +79,7 @@ export default function About() {
               items={[
                 "Leadership",
                 "DevOps",
-                "mentorship",
+                "Mentorship",
                 "UI/UX",
                 "SEO",
                 "Performance",

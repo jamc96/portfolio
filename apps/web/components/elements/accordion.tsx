@@ -60,7 +60,7 @@ export const AccordionItem = ({
       className={cn(
         "overflow-hidden rounded-md p-6 transition-colors duration-500 ease-in-out",
         className,
-        isOpen ? "bg-secondary" : "bg-transparent",
+        isOpen ? "bg-secondary text-secondary-foreground" : "bg-transparent",
       )}
     >
       {children}
@@ -80,7 +80,7 @@ export const AccordionHeader = ({ index, children }: AccordionHeaderProps) => {
       className={cn(
         "cursor-pointer text-20 font-bold transition duration-300",
         isOpen
-          ? "bg-secondary text-background delay-200 dark:text-foreground"
+          ? "bg-secondary text-secondary-foreground delay-200 dark:text-secondary-foreground"
           : "bg-transparent",
       )}
       onClick={() => toggleIndex(index)}
@@ -108,7 +108,7 @@ export const AccordionContent = ({
           animate={{ opacity: 1, maxHeight: 300 }}
           exit={{ opacity: 0, maxHeight: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="pt-2 text-background dark:text-foreground"
+          className="pt-2 text-secondary-foreground dark:text-secondary-foreground"
         >
           {children}
         </motion.div>
