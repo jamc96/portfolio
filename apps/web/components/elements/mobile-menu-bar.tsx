@@ -10,10 +10,10 @@ import {
   IconUser,
 } from "@tabler/icons-react";
 import { AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 import { buttonVariants } from "../ui/button";
 import MobileMenuModal from "../ui/mobile-menu-modal";
+import { ClientCustomLink } from "../shared/custom-link/client";
 
 export default function MobileMenuBar() {
   const [open, setOpen] = useState(false);
@@ -44,23 +44,23 @@ export default function MobileMenuBar() {
               onClick={handleClick}
             >
               <div className="mt-12 flex flex-col gap-y-6 px-6 text-16 font-semibold">
-                <Link
+                <ClientCustomLink
                   className="inline-flex cursor-pointer items-center justify-between rounded-md bg-secondary px-6 py-2 text-secondary-foreground"
                   href="/projects"
                 >
                   Projects
                   <IconComponents />
-                </Link>
-                <Link
+                </ClientCustomLink>
+                <ClientCustomLink
                   className="inline-flex cursor-pointer items-center justify-between rounded-md bg-secondary px-6 py-2 text-secondary-foreground"
                   href="/about"
                 >
                   About
                   <IconUser />
-                </Link>
+                </ClientCustomLink>
               </div>
               <div className="flex w-full flex-col gap-y-8">
-                <Link
+                <ClientCustomLink
                   href="mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website"
                   className={cn(
                     buttonVariants({
@@ -70,23 +70,26 @@ export default function MobileMenuBar() {
                   )}
                 >
                   Get in touch
-                </Link>
+                </ClientCustomLink>
                 <div className="flex items-center justify-center gap-x-2">
-                  <Link target="_blank" href="https://x.com/jamcmejia1">
+                  <ClientCustomLink
+                    target="_blank"
+                    href="https://x.com/jamcmejia1"
+                  >
                     <IconBrandX className="text-foreground hover:text-primary" />
-                  </Link>
-                  <Link
+                  </ClientCustomLink>
+                  <ClientCustomLink
                     target="_blank"
                     href="https://www.linkedin.com/in/jose-alfredo-mejia"
                   >
                     <IconBrandLinkedin className="text-foreground hover:text-primary" />
-                  </Link>
-                  <Link href="mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website">
+                  </ClientCustomLink>
+                  <ClientCustomLink href="mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website">
                     <IconBrandGmail className="text-foreground hover:text-primary" />
-                  </Link>
-                  <Link target="_blank" href="/cv_josemejia.pdf">
+                  </ClientCustomLink>
+                  <ClientCustomLink target="_blank" href="/cv_josemejia.pdf">
                     <IconFileCv className="text-foreground hover:text-primary" />
-                  </Link>
+                  </ClientCustomLink>
                 </div>
               </div>
             </div>

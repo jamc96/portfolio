@@ -1,4 +1,4 @@
-import { getFeaturedProjects } from "@/app/action/projects";
+import { getFeaturedProjects } from "@/app/[lang]/action/projects";
 import { cn } from "@/lib/utils";
 import { IconStarFilled } from "@tabler/icons-react";
 import Link from "next/link";

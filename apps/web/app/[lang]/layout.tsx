@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { PT_Sans, Nunito } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import NavigationBar from "@/components/navigation-bar";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Locale } from "@/lib/i18n/types";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -26,13 +27,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: Locale }>;
 }>) {
+  const { lang } = await params;
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <body
         className={`${ptSans.variable} ${nunito.variable} relative flex min-h-screen flex-col font-body antialiased`}
       >

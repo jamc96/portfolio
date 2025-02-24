@@ -1,4 +1,4 @@
-import { getProjectBySlug } from "@/app/action/projects";
+import { getProjectBySlug } from "@/app/[lang]/action/projects";
 import AnimateEntrance from "@/components/elements/animate-entrance";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";

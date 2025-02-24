@@ -1,4 +1,4 @@
-import { getAllProjects, getProyectTypes } from "@/app/action/projects";
+import { getAllProjects, getProyectTypes } from "@/app/[lang]/action/projects";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";

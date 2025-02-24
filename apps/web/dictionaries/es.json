@@ -1,0 +1,213 @@
+{
+  "navigation": {
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Get in touch"
+  },
+  "footer": {
+    "copyright": "© 2025",
+    "github": { "labe": "| Built with 💜", "description": "View on GitHub" }
+  },
+  "home": {
+    "hero": {
+      "label": "Creando soluciones inteligentes",
+      "titles": {
+        "title1": "Creating",
+        "words": [
+          "Impactful",
+          "High-Quality",
+          "Innovative",
+          "Next-Gen",
+          "Cutting-Edge"
+        ],
+        "title2": "Digital Solutions"
+      },
+      "video": { "label": "Intro", "description": "Watch Video", "url": "#" }
+    },
+    "featured": {
+      "title": "Featured Projects"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Software Engineer & DevOps",
+      "description": "With over 8 years of experience in web development and DevOps, I specialize in creating great user experiences and delivering powerful solutions that drive results",
+      "resume": {
+        "label": "Download Resume",
+        "url": "/cv_josemejia.pdf"
+      },
+      "tehnicalSkills": [
+        "Next.js",
+        "React",
+        "Strapi",
+        "Tailwindcss",
+        "Docker",
+        "Node",
+        "Kubernetes",
+        "Typescript"
+      ],
+      "languages": ["Spanish", "English"],
+      "additionalSkills": [
+        "Leadership",
+        "DevOps",
+        "Mentorship",
+        "UI/UX",
+        "SEO",
+        "Performance",
+        "Software Architecture"
+      ]
+    }
+  },
+  "projects": [
+    {
+      "id": 0,
+      "name": "Rediseño de Pagina Web",
+      "description": "Led a complete redesign of the platform, focusing on high availability, performance and SEO improvements. Delivered interactive pages like weddings and resorts to create a seamless user experience.",
+      "url": "https://www.beaches.com/",
+      "label": "beaches.com",
+      "image": "/beaches.png",
+      "skills": [
+        "Next.js",
+        "React",
+        "Strapi",
+        "Tailwindcss",
+        "Docker",
+        "Node",
+        "Kubernetes",
+        "Typescript"
+      ],
+      "categories": [
+        "Development",
+        "DevOps",
+        "Leadership",
+        "UI/UX",
+        "SEO",
+        "Performance",
+        "Brand"
+      ],
+      "type": "development",
+      "slug": "website-rebrading",
+      "featured": true
+    },
+    {
+      "id": 1,
+      "name": "Nonprofit Foundation",
+      "description": "Enhanced the user experience for donors and content administators, providing a fully modern responsive interface with integrations for blogging and payment processing.",
+      "url": "https://sandalsfoundation.org/",
+      "image": "/sandals-foundation.png",
+      "label": "sandalsfoundation.org",
+      "skills": [
+        "Next.js",
+        "React",
+        "Strapi",
+        "Tailwindcss",
+        "Docker",
+        "Node",
+        "Kubernetes",
+        "Typescript"
+      ],
+      "categories": [
+        "Development",
+        "DevOps",
+        "Leadership",
+        "UI/UX",
+        "SEO",
+        "Performance",
+        "Brand"
+      ],
+      "slug": "non-profit-foundation",
+      "type": "development",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Software Automation",
+      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
+      "url": null,
+      "image": null,
+      "label": "beaches.co.uk",
+      "skills": [
+        "Next.js",
+        "React",
+        "Strapi",
+        "Tailwindcss",
+        "Docker",
+        "Node",
+        "Kubernetes",
+        "Typescript"
+      ],
+      "categories": [
+        "Development",
+        "DevOps",
+        "Leadership",
+        "UI/UX",
+        "SEO",
+        "Performance",
+        "Brand"
+      ],
+      "slug": "software-automation",
+      "type": "automation",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "name": "Blogs Enhancement",
+      "description": "Developed the rebranded blog with a modern UI/UX, integrating SEO and performance optimizations while restructuring content to enhance user engagement and the reading experience.",
+      "url": "https://www.beaches.co.uk/blog/",
+      "image": "/blog.png",
+      "label": "beaches.co.uk",
+      "skills": [
+        "Next.js",
+        "React",
+        "Strapi",
+        "Tailwindcss",
+        "Docker",
+        "Node",
+        "Kubernetes",
+        "Typescript"
+      ],
+      "categories": [
+        "Development",
+        "DevOps",
+        "Leadership",
+        "UI/UX",
+        "SEO",
+        "Performance",
+        "Brand"
+      ],
+      "slug": "blogs-enhacement",
+      "type": "development",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "name": "Content Management",
+      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
+      "url": null,
+      "image": null,
+      "label": "beaches.co.uk",
+      "skills": [
+        "Next.js",
+        "React",
+        "Strapi",
+        "Tailwindcss",
+        "Docker",
+        "Node",
+        "Kubernetes",
+        "Typescript"
+      ],
+      "categories": [
+        "Development",
+        "DevOps",
+        "Leadership",
+        "UI/UX",
+        "SEO",
+        "Performance",
+        "Brand"
+      ],
+      "slug": "content-management",
+      "type": "automation",
+      "featured": false
+    }
+  ]
+}
