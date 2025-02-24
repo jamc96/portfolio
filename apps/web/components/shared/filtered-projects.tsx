@@ -108,8 +108,8 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
                     <Link
                       href={`/projects/${slug}`}
                       className={cn(
-                        "flex-shrink-0 cursor-pointer place-self-end",
                         buttonVariants({ variant: "navigation-link" }),
+                        "flex-shrink-0 cursor-pointer place-self-end text-background dark:text-foreground",
                       )}
                     >
                       see more

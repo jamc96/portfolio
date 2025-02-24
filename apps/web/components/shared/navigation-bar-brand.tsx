@@ -13,9 +13,9 @@ export default function NavigationBarBrand({
       })}
     >
       <Link href="/" className="group flex flex-col items-start">
-        <p className="rounded-lg px-4 py-2 font-heading text-24 font-extrabold text-foreground group-hover:bg-primary tablet:text-32 desktop:text-40">
+        <p className="rounded-lg px-4 py-2 font-heading text-24 font-extrabold group-hover:bg-primary group-hover:text-background dark:text-foreground dark:group-hover:text-foreground tablet:text-32 desktop:text-40">
           Jose
-          <span className="text-primary group-hover:text-foreground">
+          <span className="text-primary group-hover:text-background dark:group-hover:text-foreground">
             Mejia
           </span>
         </p>

@@ -4,31 +4,31 @@ import {
   IconBrandX,
   IconCode,
   IconFileCv,
-  IconSunFilled,
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { ModeToggle } from "./elements/mode-toggle";
 
 export default function Footer() {
   return (
     <footer className="container sticky inset-x-0 bottom-0 z-40 flex w-full items-center justify-between border-t border-background bg-background/75 py-4 backdrop-blur-lg desktop:py-10">
       {/* left */}
-      <div className="hidden gap-x-2 tablet:inline-flex">
+      <div className="hidden items-center gap-x-2 tablet:inline-flex">
         <Link target="_blank" href="https://x.com/jamcmejia1">
-          <IconBrandX className="text-gray-200 hover:text-primary" />
+          <IconBrandX className="text-foreground hover:text-primary" />
         </Link>
         <Link
           target="_blank"
           href="https://www.linkedin.com/in/jose-alfredo-mejia"
         >
-          <IconBrandLinkedin className="text-gray-200 hover:text-primary" />
+          <IconBrandLinkedin className="text-foreground hover:text-primary" />
         </Link>
         <Link href="mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website">
-          <IconBrandGmail className="text-gray-200 hover:text-primary" />
+          <IconBrandGmail className="text-foreground hover:text-primary" />
         </Link>
         <Link target="_blank" href="/cv_josemejia.pdf">
-          <IconFileCv className="text-gray-200 hover:text-primary" />
+          <IconFileCv className="text-foreground hover:text-primary" />
         </Link>
       </div>
       {/* center */}
@@ -57,9 +57,9 @@ export default function Footer() {
         </Link>
       </div>
       {/* right */}
-      <div className="gap-x-2ƒ inline-flex gap-x-2">
-        <span className="text-neutral">En</span>
-        <IconSunFilled />
+      <div className="inline-flex items-center gap-x-2">
+        <span className="font-bold text-neutral">En</span>
+        <ModeToggle />
       </div>
     </footer>
   );

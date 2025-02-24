@@ -11,7 +11,7 @@ const ContentBlock = ({
   items: Array<string>;
 }) => (
   <>
-    <h3 className="text-center text-20 font-semibold capitalize text-foreground">
+    <h3 className="text-center text-20 font-semibold capitalize text-background dark:text-foreground">
       {label}
     </h3>
     <div className="inline-flex w-full flex-wrap justify-center gap-2">
@@ -85,7 +85,7 @@ export default function About() {
                 "Performance",
                 "Software Architecture",
               ]}
-              label="technical skills"
+              label="additional skills"
             />
           </div>
         </div>

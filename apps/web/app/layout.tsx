@@ -3,6 +3,7 @@ import { PT_Sans, Nunito } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/components/navigation-bar";
 import Footer from "@/components/footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -31,13 +32,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${ptSans.variable} ${nunito.variable} relative flex min-h-screen flex-col font-body antialiased`}
       >
-        <NavigationBar />
-        <main className="relative flex flex-1 flex-col">{children}</main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NavigationBar />
+          <main className="relative flex flex-1 flex-col text-foreground dark:text-foreground">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

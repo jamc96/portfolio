@@ -79,7 +79,9 @@ export const AccordionHeader = ({ index, children }: AccordionHeaderProps) => {
     <div
       className={cn(
         "cursor-pointer text-20 font-bold transition duration-300",
-        isOpen ? "bg-secondary delay-200" : "bg-transparent",
+        isOpen
+          ? "bg-secondary text-background delay-200 dark:text-foreground"
+          : "bg-transparent",
       )}
       onClick={() => toggleIndex(index)}
     >
@@ -106,7 +108,7 @@ export const AccordionContent = ({
           animate={{ opacity: 1, maxHeight: 300 }}
           exit={{ opacity: 0, maxHeight: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="pt-2"
+          className="pt-2 text-background dark:text-foreground"
         >
           {children}
         </motion.div>

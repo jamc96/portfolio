@@ -52,11 +52,11 @@ export default async function Project({
                   )}
                 >
                   {project.featured && (
-                    <IconStarFilled className="size-5 text-foreground" />
+                    <IconStarFilled className="size-5 text-background dark:text-foreground" />
                   )}
 
                   <IProyectType
-                    className="size-5 text-foreground"
+                    className="size-5 text-background dark:text-foreground"
                     type={project.type}
                   />
                 </span>
