@@ -98,7 +98,7 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
               ) => (
                 <AccordionItem key={`accordion-${index}`} index={id}>
                   <AccordionHeader index={id}>
-                    <div className="flex w-full justify-between gap-x-8">
+                    <div className="sm:gap-x-4 flex w-full justify-between gap-x-2">
                       <Link
                         href={{
                           pathname: "/projects/",
