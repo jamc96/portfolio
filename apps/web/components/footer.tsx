@@ -9,6 +9,12 @@ import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./elements/mode-toggle";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
 
 export default function Footer() {
   return (
@@ -58,7 +64,16 @@ export default function Footer() {
       </div>
       {/* right */}
       <div className="inline-flex items-center gap-x-2">
-        <span className="font-bold text-neutral">En</span>
+        {/* <span className="font-bold text-neutral">En</span> */}
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>En</TooltipTrigger>
+            <TooltipContent>
+              <p>Translation coming soon</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+
         <ModeToggle />
       </div>
     </footer>
