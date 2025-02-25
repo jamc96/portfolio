@@ -1,4 +1,4 @@
-![Portfolio Banner](https://raw.githubusercontent.com/jamc96/portfolio/refs/heads/main/assets/Project-Banner.png)
+![Portfolio Banner](https://raw.githubusercontent.com/jamc96/portfolio/refs/heads/main/assets/project-banner.png)
 
 # Portfolio - Monorepo
 
