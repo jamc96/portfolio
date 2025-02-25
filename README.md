@@ -1,3 +1,5 @@
+![Portfolio Banner](https://raw.githubusercontent.com/jamc96/portfolio/refs/heads/main/assets/Project-Banner.png)
+
 # Portfolio - Monorepo
 
 This is the **monorepo** for my personal portfolio, built using **Next.js** and managed with **pnpm** and **Turbo** for efficient development. It includes multiple applications and shared packages to streamline the development process.
@@ -112,10 +114,12 @@ This monorepo uses **Turbo** for task caching and parallel execution.
    vercel --prod
    ```
 4. **Fixing Corepack Issue:** If you encounter a deployment issue related to Corepack, enable it by adding the following environment variable in your Vercel project settings:
+
    - **Key**: `ENABLE_EXPERIMENTAL_COREPACK`
    - **Value**: `1`
-   
+
    Also, ensure `packageManager` is set in `package.json`:
+
    ```json
    {
      "packageManager": "pnpm@9"
@@ -135,6 +139,7 @@ This monorepo uses **Turbo** for task caching and parallel execution.
 ## 📜 Individual READMEs
 
 Each application and shared package contains its own README:
+
 - `apps/web/README.md` → Details specific to the Next.js portfolio.
 - `apps/cms/README.md` → Documentation for the Strapi CMS setup and usage.
 - `packages/typescript-config/README.md` → Explanation of TypeScript configurations.
@@ -147,4 +152,3 @@ This project is based on my **[Monorepo Starter Template](https://github.com/jam
 ## 📜 License
 
 This project is licensed under the **MIT License**.
-
