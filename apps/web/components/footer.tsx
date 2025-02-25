@@ -15,10 +15,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
+import { LinkPreview } from "./ui/link-preview";
 
 export default function Footer() {
   return (
-    <footer className="container sticky inset-x-0 bottom-0 z-40 flex w-full items-center justify-between border-t border-background bg-background/75 py-4 backdrop-blur-lg desktop:py-10">
+    <footer className="container sticky inset-x-0 bottom-0 z-40 flex w-full items-center justify-between border-t border-background bg-background/75 py-4 backdrop-blur-lg desktop:py-4">
       {/* left */}
       <div className="hidden items-center gap-x-2 tablet:inline-flex">
         <Link target="_blank" href="https://x.com/jamcmejia1">
@@ -41,9 +42,8 @@ export default function Footer() {
       <div className="inline-flex items-center gap-x-2">
         <p>©</p>
         <span className="font-bold">2025</span>
-        <Link
-          target="_blank"
-          href="https://github.com/jamc96/portfolio"
+        <LinkPreview
+          url="https://github.com/jamc96/portfolio"
           className="group inline-flex items-center gap-x-2"
         >
           {"|"}
@@ -60,7 +60,7 @@ export default function Footer() {
               View on Github
             </span>
           </div>
-        </Link>
+        </LinkPreview>
       </div>
       {/* right */}
       <div className="inline-flex items-center gap-x-2">
@@ -69,7 +69,7 @@ export default function Footer() {
           <Tooltip>
             <TooltipTrigger>En</TooltipTrigger>
             <TooltipContent>
-              <p>Translation coming soon</p>
+              <p>Translation Coming soon</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

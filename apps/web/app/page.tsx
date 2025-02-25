@@ -1,5 +1,6 @@
 import { WordRotate } from "@/components/magicui/word-rotate";
 import { FeaturedProjects } from "@/components/shared/featured-projects";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { IconPlayerPlayFilled } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -26,8 +27,7 @@ export default function Home() {
             <br /> Digital Solutions
           </h1>
           <Link href="/" className="group relative mt-8 p-1">
-            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-neutral" />
-            <div className="group relative flex items-start gap-x-4 rounded-lg bg-background p-1 text-foreground transition duration-200 hover:bg-transparent dark:bg-foreground dark:hover:bg-transparent">
+            <BackgroundGradient className="group relative flex items-start gap-x-4 rounded-lg bg-background p-1 text-foreground transition duration-200 hover:bg-transparent dark:bg-foreground dark:hover:bg-transparent">
               <span className="inline-flex size-20 flex-shrink-0 items-center justify-center rounded-full bg-primary group-hover:bg-background dark:group-hover:bg-foreground">
                 <IconPlayerPlayFilled className="size-16 text-background group-hover:text-primary dark:text-foreground" />
               </span>
@@ -39,7 +39,7 @@ export default function Home() {
                   Watch Video
                 </span>
               </div>
-            </div>
+            </BackgroundGradient>
           </Link>
         </div>
         <div className="hidden desktop:block">

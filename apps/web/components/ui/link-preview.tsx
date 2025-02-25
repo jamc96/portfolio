@@ -100,7 +100,8 @@ export const LinkPreview = ({
       >
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
-          className={cn("text-black dark:text-white", className)}
+          className={cn("text-foreground", className)}
+          target="_blank"
           href={url}
         >
           {children}
@@ -133,6 +134,7 @@ export const LinkPreview = ({
                 }}
               >
                 <Link
+                  target="_blank"
                   href={url}
                   className="block rounded-xl border-2 border-transparent bg-white p-1 shadow hover:border-neutral-200 dark:hover:border-neutral-800"
                   style={{ fontSize: 0 }}
@@ -144,7 +146,7 @@ export const LinkPreview = ({
                     quality={quality}
                     layout={layout}
                     priority={true}
-                    className="rounded-lg"
+                    className="rounded-xl"
                     alt="preview image"
                   />
                 </Link>

@@ -1,6 +1,7 @@
 import { getProjectBySlug } from "@/app/action/projects";
 import AnimateEntrance from "@/components/elements/animate-entrance";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { LinkPreview } from "@/components/ui/link-preview";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { IProyectType } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
@@ -67,7 +68,14 @@ export default async function Project({
               <h1 className="text-center font-heading text-40 font-bold">
                 {project.name}
               </h1>
-              <p className="text-center text-16">{project.description}</p>
+              <span className="text-center text-16">
+                {project.link && (
+                  <LinkPreview className="font-bold" url={project.link.url}>
+                    {project.link?.label}{" "}
+                  </LinkPreview>
+                )}{" "}
+                {project.description}
+              </span>
             </div>
             {/* Categories and skills */}
             <div className="flex flex-col gap-y-2 px-4 tablet:flex-row tablet:gap-x-8">

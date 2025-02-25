@@ -17,7 +17,6 @@ export default async function Page({
           <h1 className="font-heading text-40 font-bold tablet:text-48 desktop:w-2/5 desktop:self-end">
             Projects
           </h1>
-
           <FilteredProjects query={query} />
         </div>
       </section>

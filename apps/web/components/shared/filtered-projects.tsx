@@ -11,6 +11,15 @@ import {
 import AnimateEntrance from "../elements/animate-entrance";
 import { buttonVariants } from "../ui/button";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
+import { LinkPreview } from "../ui/link-preview";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
+import { IProyectType } from "@/lib/helpers";
+import { IconStarFilled } from "@tabler/icons-react";
 
 export type SearchParams = { type: string; project?: string };
 interface FilteredProjects {
@@ -80,44 +89,98 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
             ))}
           </div>
         </div>
-        <div className="overflow-y-auto desktop:h-[30rem]">
+        <div className="overflow-y-auto desktop:h-[28rem]">
           <Accordion>
-            {projects.map(({ name, slug, description, id }, index) => (
-              <AccordionItem key={`accordion-${index}`} index={id}>
-                <AccordionHeader index={id}>
-                  <Link
-                    href={{
-                      pathname: "/projects/",
-                      query: {
-                        type: query?.type || "all",
-                        project: slug,
-                      },
-                    }}
-                  >
-                    <span className="pr-8">
-                      {(index + 1).toString().padStart(2, "0")}
-                    </span>
-                    {name}
-                  </Link>
-                </AccordionHeader>
-                <AccordionContent index={id}>
-                  <div className="flex flex-col justify-end gap-y-2">
-                    <span className="line-clamp-5 text-16 font-normal tablet:line-clamp-3">
-                      {description}
-                    </span>
-                    <Link
-                      href={`/projects/${slug}`}
-                      className={cn(
-                        buttonVariants({ variant: "navigation-link" }),
-                        "flex-shrink-0 cursor-pointer place-self-end text-background dark:text-foreground",
-                      )}
-                    >
-                      see more
-                    </Link>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
+            {projects.map(
+              (
+                { name, slug, description, id, link, type, featured },
+                index,
+              ) => (
+                <AccordionItem key={`accordion-${index}`} index={id}>
+                  <AccordionHeader index={id}>
+                    <div className="flex w-full justify-between gap-x-8">
+                      <Link
+                        href={{
+                          pathname: "/projects/",
+                          query: {
+                            type: query?.type || "all",
+                            project: slug,
+                          },
+                        }}
+                      >
+                        <span className="pr-8">
+                          {(index + 1).toString().padStart(2, "0")}
+                        </span>
+                        {name}
+                      </Link>
+                      <div className="inline-flex gap-x-2">
+                        {featured && (
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger>
+                                <IconStarFilled className="size-5 text-background dark:text-foreground" />
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p
+                                  className={cn(buttonVariants({ size: "xs" }))}
+                                >
+                                  Featured Project
+                                </p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        )}
+
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <IProyectType
+                                className={cn("size-5", {
+                                  "text-[#84BE7E]": type === "development",
+                                  "text-[#9873C6]": type === "automation",
+                                })}
+                                type={type}
+                              />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className={cn(buttonVariants({ size: "xs" }))}>
+                                {type === "automation"
+                                  ? "DevOps Automation"
+                                  : "Software Development"}
+                              </p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </div>
+                    </div>
+                  </AccordionHeader>
+                  <AccordionContent index={id}>
+                    <div className="flex flex-col justify-end gap-y-2">
+                      <span className="line-clamp-5 gap-x-2 text-16 font-normal tablet:line-clamp-3">
+                        {link && (
+                          <LinkPreview
+                            className="font-bold text-background underline underline-offset-4 dark:text-foreground"
+                            url={link.url}
+                          >
+                            {link?.label}
+                          </LinkPreview>
+                        )}{" "}
+                        {description}
+                      </span>
+                      <Link
+                        href={`/projects/${slug}`}
+                        className={cn(
+                          buttonVariants({ variant: "navigation-link" }),
+                          "flex-shrink-0 cursor-pointer place-self-end text-background dark:text-foreground",
+                        )}
+                      >
+                        see more
+                      </Link>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ),
+            )}
           </Accordion>
         </div>
       </div>

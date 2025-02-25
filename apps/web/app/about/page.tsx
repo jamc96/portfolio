@@ -42,7 +42,7 @@ export default function About() {
           {/* profile details */}
           <div className="inline-flex flex-col items-center">
             <h1 className="font-heading text-24 font-semibold">
-              Software Engineer & DevOps
+              Senior Full Stack Engineer
             </h1>
             <p className="text-center text-16">
               With over 8 years of experience in web development and DevOps, I
