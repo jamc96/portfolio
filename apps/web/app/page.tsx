@@ -1,8 +1,8 @@
+import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import { WordRotate } from "@/components/magicui/word-rotate";
 import { FeaturedProjects } from "@/components/shared/featured-projects";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { IconPlayerPlayFilled } from "@tabler/icons-react";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -26,7 +26,12 @@ export default function Home() {
             />
             <br /> Digital Solutions
           </h1>
-          <Link href="/" className="group relative mt-8 p-1">
+
+          <HeroVideoDialog
+            className="group relative mt-8 p-1"
+            animationStyle="from-center"
+            videoSrc="https://www.youtube.com/embed/sxGpp9q8T9Q?si=bPHvKCKwXG1eXKVY"
+          >
             <BackgroundGradient className="group relative flex items-start gap-x-4 rounded-lg bg-background p-1 text-foreground transition duration-200 hover:bg-transparent dark:bg-foreground dark:hover:bg-transparent">
               <span className="inline-flex size-20 flex-shrink-0 items-center justify-center rounded-full bg-primary group-hover:bg-background dark:group-hover:bg-foreground">
                 <IconPlayerPlayFilled className="size-16 text-background group-hover:text-primary dark:text-foreground" />
@@ -40,7 +45,7 @@ export default function Home() {
                 </span>
               </div>
             </BackgroundGradient>
-          </Link>
+          </HeroVideoDialog>
         </div>
         <div className="hidden desktop:block">
           <FeaturedProjects />
