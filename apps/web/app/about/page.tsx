@@ -53,7 +53,7 @@ export default function About() {
           {/* Download resume */}
           <Link
             target="_blank"
-            href="/cv_josemejia.pdf"
+            href="/resume_josemejia.pdf"
             className={buttonVariants({ size: "lg" })}
           >
             Download Resume

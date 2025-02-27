@@ -34,7 +34,7 @@ export default function Footer() {
         <Link href="mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website">
           <IconBrandGmail className="text-foreground hover:text-primary" />
         </Link>
-        <Link target="_blank" href="/cv_josemejia.pdf">
+        <Link target="_blank" href="/resume_josemejia.pdf">
           <IconFileCv className="text-foreground hover:text-primary" />
         </Link>
       </div>
