@@ -4,7 +4,7 @@ export const projects = [
         id: 0,
         name: 'Website Redisign',
         description:
-            'was a collaborative team effort where, as a Senior Full Stack Engineer, I played a key role in rebuilding the travel website from the ground up. I designed the technical framework that supported the site and contributed to creating user-friendly features like the weddings and resorts pages, ensuring a reliable and easy-to-use experience. I mentored 15+ junior developers, guiding their growth and helping the team maintain momentum, while partnering with DevOps to ensure the site’s stability and working with marketing to improve content management. Through our teamwork, we reduced development time by 40%, making this rebrand a successful team achievement, bolstered by my technical expertise and collaborative support.',
+            'was a collaborative team effort where, as a Senior Full Stack Developer, I played a key role in rebuilding the travel website from the ground up. I designed the technical framework that supported the site and contributed to creating user-friendly features like the weddings and resorts pages, ensuring a reliable and easy-to-use experience. I mentored 15+ junior developers, guiding their growth and helping the team maintain momentum, while partnering with DevOps to ensure the site’s stability and working with marketing to improve content management. Through our teamwork, we reduced development time by 40%, making this rebrand a successful team achievement, bolstered by my technical expertise and collaborative support.',
         link: {
             label: 'Beaches.com',
             url: 'https://www.beaches.com/',
