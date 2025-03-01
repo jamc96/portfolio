@@ -4,6 +4,7 @@
       "mode": "auto",
     }
   ],
+  "editor.rulers": [80,120],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
   "source.formatDocument": true,

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_heroes",
+  "info": {
+    "displayName": "hero",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "header": {
+      "displayName": "header",
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.header"
+    },
+    "video": {
+      "displayName": "buttonVideo",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button-video"
+    }
+  }
+}

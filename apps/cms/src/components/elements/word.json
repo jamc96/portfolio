@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_elements_words",
+  "info": {
+    "displayName": "word",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_button_videos",
+  "info": {
+    "displayName": "buttonVideo",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "default": "#",
+      "regex": "^(https?:\\/\\/)(www\\.)?([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,}(\\/[a-zA-Z0-9-._~:/?#[\\]@!$&'()*+,;=]*)?$"
+    }
+  }
+}
