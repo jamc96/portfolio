@@ -17,7 +17,7 @@ export default function DesktopMenuBar() {
       </Link>
       <Link
         href="mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website"
-        className={buttonVariants({ variant: "secondary", size: "lg" })}
+        className={buttonVariants({ variant: "secondary", size: "large" })}
       >
         Get in touch
       </Link>

@@ -16,6 +16,12 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.hero"
+    },
+    "featured": {
+      "displayName": "featuredProjects",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.featured-projects"
     }
   }
 }

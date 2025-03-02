@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_featured_projects",
+  "info": {
+    "displayName": "featuredProjects",
+    "icon": "star",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "featured projects"
+    }
+  }
+}

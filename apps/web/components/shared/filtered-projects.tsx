@@ -1,6 +1,4 @@
-import { getAllProjects, getProyectTypes } from "@/app/action/projects";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { cn, getProyectTypes } from "@/lib/utils";
 import Link from "next/link";
 import {
   Accordion,
@@ -20,6 +18,9 @@ import {
 } from "../ui/tooltip";
 import { IProyectType } from "@/lib/helpers";
 import { IconStarFilled } from "@tabler/icons-react";
+import { CustomImage } from "./custom-image";
+import { fetchAPI } from "@/lib/api";
+import { Project } from "@/lib/types";
 
 export type SearchParams = { type: string; project?: string };
 interface FilteredProjects {
@@ -28,23 +29,39 @@ interface FilteredProjects {
 
 export const FilteredProjects = async ({ query }: FilteredProjects) => {
   const queryType =
-    !query.type || query.type === "all" ? undefined : { type: query.type };
-  const projects = await getAllProjects({ query: queryType });
-  const types = await getProyectTypes();
+    !query.type || query.type === "all" ? { $null: "" } : { $eq: query.type };
+  const projects = await fetchAPI<Project[]>({
+    path: "/api/projects",
+    query: {
+      populate: {
+        cover: {
+          fields: ["url", "alternativeText", "width", "height"],
+        },
+        link: {
+          fields: ["label", "url"],
+        },
+      },
+      filters: {
+        type: {
+          ...queryType,
+        },
+      },
+    },
+  });
 
   const selectedProject =
     projects.find((p) => p.slug === query.project) || projects[0];
 
+  const types = getProyectTypes();
+
   return (
     <div className="flex w-full flex-col gap-x-16 desktop:flex-row desktop:items-center desktop:justify-between">
       <div className="relative -mx-[2rem] hidden h-[32rem] w-full flex-1 desktop:inline-flex">
-        {selectedProject?.image ? (
+        {selectedProject?.cover ? (
           <AnimateEntrance>
-            <Image
-              src={selectedProject.image}
-              alt="project image"
+            <CustomImage
+              {...selectedProject.cover}
               className="h-full w-full rounded-tr-lg"
-              fill
             />
           </AnimateEntrance>
         ) : (
@@ -58,7 +75,7 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
           <Link
             href={{
               pathname: "/projects/",
-              query: { type: "all", project: selectedProject.slug },
+              query: { type: "all", project: selectedProject?.slug },
             }}
             className={cn(
               "flex-shrink-0 cursor-pointer place-self-end",
@@ -73,7 +90,7 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
                 key={`type-${index}`}
                 href={{
                   pathname: "/projects/",
-                  query: { type: slug, project: selectedProject.slug },
+                  query: { type: slug, project: selectedProject?.slug },
                 }}
                 className={cn(
                   "flex-shrink-0 cursor-pointer place-self-end",
@@ -92,12 +109,9 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
         <div className="overflow-y-auto desktop:h-[28rem]">
           <Accordion>
             {projects.map(
-              (
-                { name, slug, description, id, link, type, featured },
-                index,
-              ) => (
-                <AccordionItem key={`accordion-${index}`} index={id}>
-                  <AccordionHeader index={id}>
+              ({ name, slug, description, link, type, featured }, index) => (
+                <AccordionItem key={`accordion-${index}`} index={index}>
+                  <AccordionHeader index={index}>
                     <div className="sm:gap-x-4 flex w-full justify-between gap-x-2">
                       <Link
                         href={{
@@ -122,7 +136,9 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
                               </TooltipTrigger>
                               <TooltipContent>
                                 <p
-                                  className={cn(buttonVariants({ size: "xs" }))}
+                                  className={cn(
+                                    buttonVariants({ size: "extra-small" }),
+                                  )}
                                 >
                                   Featured Project
                                 </p>
@@ -143,10 +159,13 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
                               />
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p className={cn(buttonVariants({ size: "xs" }))}>
-                                {type === "automation"
-                                  ? "DevOps Automation"
-                                  : "Software Development"}
+                              <p
+                                className={cn(
+                                  buttonVariants({ size: "extra-small" }),
+                                )}
+                              >
+                                {types.find((x) => x.slug === type)?.label ||
+                                  "Software"}
                               </p>
                             </TooltipContent>
                           </Tooltip>
@@ -154,7 +173,7 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
                       </div>
                     </div>
                   </AccordionHeader>
-                  <AccordionContent index={id}>
+                  <AccordionContent index={index}>
                     <div className="flex flex-col justify-end gap-y-2">
                       <span className="line-clamp-5 gap-x-2 text-16 font-normal tablet:line-clamp-3">
                         {link && (

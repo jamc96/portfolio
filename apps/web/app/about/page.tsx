@@ -16,7 +16,7 @@ const ContentBlock = ({
     </h3>
     <div className="inline-flex w-full flex-wrap justify-center gap-2">
       {items.map((name, index) => (
-        <Button key={`category-${index}`} size="sm" variant="secondary">
+        <Button key={`category-${index}`} size="small" variant="secondary">
           {name}
         </Button>
       ))}
@@ -54,7 +54,7 @@ export default function About() {
           <Link
             target="_blank"
             href="/resume_josemejia.pdf"
-            className={buttonVariants({ size: "lg" })}
+            className={buttonVariants({ size: "large" })}
           >
             Download Resume
           </Link>

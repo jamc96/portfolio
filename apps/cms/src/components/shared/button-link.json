@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_shared_button_links",
+  "info": {
+    "displayName": "buttonLink",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "regex": "^(https?:\\/\\/)(www\\.)?([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,}(\\/[a-zA-Z0-9-._~:/?#[\\]@!$&'()*+,;=]*)?$",
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "outline",
+        "destructive",
+        "ghost",
+        "link",
+        "navigation-link"
+      ],
+      "default": "primary"
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "extra-small",
+        "small",
+        "normal",
+        "large",
+        "icon"
+      ],
+      "default": "normal"
+    }
+  }
+}
