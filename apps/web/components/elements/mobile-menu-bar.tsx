@@ -64,7 +64,7 @@ export default function MobileMenuBar() {
                   href="mailto:jamc.mejia@gmail.com?subject=Contact From Portfolio Website"
                   className={cn(
                     buttonVariants({
-                      size: "lg",
+                      size: "large",
                     }),
                     "mx-6 text-primary-foreground",
                   )}

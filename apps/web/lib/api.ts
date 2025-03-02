@@ -1,5 +1,5 @@
 import qs from 'qs';
-const WEB_URL = process.env.NEXT_PUBLIC_WEB_URL || 'http://localhost:3000';
+const PROXY_URL = process.env.PROXY_URL || 'http://localhost:3001';
 const production = process.env.NODE_ENV !== 'development';
 
 interface FetchAPIProps {
@@ -21,8 +21,7 @@ interface APIResponse<T> {
 }
 export async function fetchAPI<T>({ path, options, query }: FetchAPIProps) {
     const parsedQuery = qs.stringify(query, { encodeValuesOnly: true })
-    const url = new URL(`${path}?${parsedQuery}`, WEB_URL)
-
+    const url = new URL(`${path}?${parsedQuery}`, PROXY_URL)
     const response = await fetch(url, options);
 
     if (!response.ok) {

@@ -1,0 +1,16 @@
+{
+  "extends": "@monorepo/typescript-config/nextjs.json",
+
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/helpers.tss"],
+  "exclude": ["node_modules"]
+}

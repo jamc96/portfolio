@@ -1,15 +1,14 @@
 {
   "eslint.workingDirectories": [
     {
-      "mode": "auto",
+      "mode": "auto"
     }
   ],
-  "editor.rulers": [80,120],
+  "editor.rulers": [80, 120],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-  "source.formatDocument": true,
-  "source.fixAll.eslint": true,
-  "source.organizeimports": true
-}
-
+    "source.formatDocument": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeimports": "explicit"
+  }
 }
