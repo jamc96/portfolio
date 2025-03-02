@@ -1,7 +1,15 @@
 import AnimateEntrance from "@/components/elements/animate-entrance";
+import { CustomImage } from "@/components/shared/custom-image";
+import { CustomLink } from "@/components/shared/custom-link";
 import { Button, buttonVariants } from "@/components/ui/button";
-import Image from "next/image";
-import Link from "next/link";
+import { fetchAPI } from "@/lib/api";
+import {
+  Category,
+  Image as TImage,
+  Link as TLink,
+  Technology,
+  Word,
+} from "@/lib/types";
 
 const ContentBlock = ({
   items,
@@ -23,7 +31,47 @@ const ContentBlock = ({
     </div>
   </>
 );
-export default function About() {
+interface APIAboutProps {
+  title: string;
+  description: string;
+  cover: TImage;
+  skills: Array<Technology>;
+  additionalSkills: Array<Category>;
+  languages: Array<Word>;
+  link: TLink;
+}
+export default async function About() {
+  const {
+    cover,
+    title,
+    description,
+    skills,
+    additionalSkills,
+    languages,
+    link,
+  } = await fetchAPI<APIAboutProps>({
+    path: "/api/about",
+    query: {
+      populate: {
+        cover: {
+          fields: ["url", "alternativeText", "width", "height"],
+        },
+        skills: {
+          fields: ["name"],
+        },
+        additionalSkills: {
+          fields: ["name"],
+        },
+        languages: {
+          fields: ["label"],
+        },
+        link: {
+          fields: ["label", "url", "variant", "size"],
+        },
+      },
+    },
+  });
+
   return (
     <>
       <section className="container relative desktop:max-w-screen-tablet">
@@ -31,62 +79,46 @@ export default function About() {
           {/* profile image */}
           <div className="relative size-[12rem]">
             <AnimateEntrance>
-              <Image
-                src="/profile.png"
-                alt="project image"
+              <CustomImage
+                {...cover}
                 className="h-full w-full rounded-md object-cover"
-                fill
               />
             </AnimateEntrance>
           </div>
           {/* profile details */}
           <div className="inline-flex flex-col items-center">
-            <h1 className="font-heading text-24 font-semibold">
-              Senior Full Stack Developer
-            </h1>
-            <p className="text-center text-16">
-              With over 8 years of experience in web development and DevOps, I
-              specialize in creating great user experiences and delivering
-              powerful solutions that drive results
-            </p>
+            <h1 className="font-heading text-24 font-semibold">{title}</h1>
+            <p className="text-center text-16">{description}</p>
           </div>
           {/* Download resume */}
-          <Link
+          <CustomLink
+            {...link}
             target="_blank"
-            href="/resume_josemejia.pdf"
             className={buttonVariants({ size: "large" })}
           >
             Download Resume
-          </Link>
+          </CustomLink>
           {/* Extra details */}
           <div className="flex flex-col items-center gap-y-4 rounded-t-md bg-secondary px-4 py-6 text-secondary-foreground">
             {/* Content blocks */}
-            <ContentBlock
-              items={[
-                "Next.js",
-                "React",
-                "Strapi",
-                "Tailwindcss",
-                "Docker",
-                "Node",
-                "Kubernetes",
-                "Typescript",
-              ]}
-              label="technical skills"
-            />
-            <ContentBlock items={["Spanish", "English"]} label="languages" />
-            <ContentBlock
-              items={[
-                "Leadership",
-                "DevOps",
-                "Mentorship",
-                "UI/UX",
-                "SEO",
-                "Performance",
-                "Software Architecture",
-              ]}
-              label="additional skills"
-            />
+            {skills && (
+              <ContentBlock
+                items={skills.map(({ name }) => name)}
+                label="technical skills"
+              />
+            )}
+            {languages && (
+              <ContentBlock
+                items={languages.map(({ label }) => label)}
+                label="languages"
+              />
+            )}
+            {additionalSkills && (
+              <ContentBlock
+                items={additionalSkills.map(({ name }) => name)}
+                label="additional skills"
+              />
+            )}
           </div>
         </div>
       </section>
