@@ -30,7 +30,7 @@ export async function GET() {
         date: textData.includes('-') ? textData : new Date().toISOString().split('T')[0],
       };
     } else {
-      throw new Error('Unexpected response format');
+      throw new Error('Unexpected response');
     }
 
     console.log('API_HEALTH: ', data);
