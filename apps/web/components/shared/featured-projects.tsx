@@ -28,6 +28,11 @@ export const FeaturedProjects = async ({ title }: { title: string }) => {
           fields: ["label", "url"],
         },
       },
+      filters: {
+        featured: {
+          $eq: true,
+        },
+      },
     },
   });
   const types = getProyectTypes();

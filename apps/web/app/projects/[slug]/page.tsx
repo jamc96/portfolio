@@ -28,6 +28,9 @@ export default async function Project({
         categories: {
           fields: ["name"],
         },
+        link: {
+          fields: ["label", "url"],
+        },
       },
       filters: {
         slug: {
