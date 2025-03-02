@@ -19,10 +19,10 @@ interface APIResponse<T> {
         };
     };
 }
-export async function fetchAPI<T>({ path, options, query }: FetchAPIProps) {
+export async function fetchAPI<T>({ path, query }: FetchAPIProps) {
     const parsedQuery = qs.stringify(query, { encodeValuesOnly: true })
     const url = new URL(`${path}?${parsedQuery}`, PROXY_URL)
-    const response = await fetch(url, options);
+    const response = await fetch(url, { cache: 'force-cache' });
 
     if (!response.ok) {
         const contentType = response.headers.get('Content-Type');
