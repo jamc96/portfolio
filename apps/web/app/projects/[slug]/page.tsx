@@ -37,8 +37,6 @@ export default async function Project({
     },
   });
   const project = projects.length > 0 ? projects[0] : null;
-
-  console.log("project", project);
   return (
     <>
       <section className="p container relative w-full desktop:px-[16rem]">

@@ -113,7 +113,7 @@ This monorepo uses **Turbo** for task caching and parallel execution.
    ```sh
    vercel --prod
    ```
-4. **Fixing Corepack Issue:** If you encounter a deployment issue related to Corepack, enable it by adding the following environment variable in your Vercel project settings:
+4. **Fixing Corepack Issue:** If you encounter a deployment issue related to Corepack(ERR_PNPM_META_FETCH_FAIL), enable it by adding the following environment variable in your Vercel project settings:
 
    - **Key**: `ENABLE_EXPERIMENTAL_COREPACK`
    - **Value**: `1`
