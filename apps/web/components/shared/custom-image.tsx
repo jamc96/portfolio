@@ -30,8 +30,8 @@ export const CustomImage = ({
       className={cn("object-cover object-center", className)}
       src={url}
       alt={alternativeText}
-      width={width}
-      height={height}
+      width={fill ? undefined : width}
+      height={fill ? undefined : height}
       fill={fill}
       {...props}
     />

@@ -99,7 +99,7 @@ export default async function About() {
             Download Resume
           </CustomLink>
           {/* Extra details */}
-          <div className="flex flex-col items-center gap-y-4 rounded-t-md bg-secondary px-4 py-6 text-secondary-foreground">
+          <div className="flex w-full flex-col items-center gap-y-4 rounded-t-md bg-secondary px-4 py-6 text-secondary-foreground">
             {/* Content blocks */}
             {skills && (
               <ContentBlock
