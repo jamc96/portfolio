@@ -1,6 +1,6 @@
 import Redis from "ioredis";
 
-const CACHE_TTL = 365 * 24 * 60 * 60; // 1 year
+const CACHE_TTL = 7 * 24 * 60 * 60; // one week
 
 let redis: Redis;
 
@@ -35,6 +35,23 @@ const cacheHandler = {
             await redis.set(key, value, "EX", CACHE_TTL);
         } catch (error) {
             console.error(`CACHE_HANDLER_SET_ERROR ${key}:`, error);
+            throw error;
+        }
+    },
+    async findKeys(pattern: string): Promise<string[]> {
+        const keys: string[] = [];
+        let cursor = "0";
+
+        try {
+            do {
+                const [nextCursor, foundKeys] = await redis.scan(cursor, "MATCH", pattern, "COUNT", 100);
+                cursor = nextCursor;
+                keys.push(...foundKeys);
+            } while (cursor !== "0");
+
+            return keys;
+        } catch (error) {
+            console.error(`CACHE_HANDLER_SCAN_ERROR ${pattern}:`, error);
             throw error;
         }
     },
