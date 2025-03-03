@@ -1,7 +1,7 @@
 import qs from 'qs';
 const PROXY_URL = process.env.PROXY_URL || 'http://localhost:3001';
 const production = process.env.NODE_ENV !== 'development';
-
+const isPreview = process.env.RUNTIME_ENV === 'preview' || false;
 interface FetchAPIProps {
     path: string;
     isCollection?: boolean;
@@ -19,10 +19,10 @@ interface APIResponse<T> {
         };
     };
 }
-export async function fetchAPI<T>({ path, query }: FetchAPIProps) {
+export async function fetchAPI<T>({ path, options, query }: FetchAPIProps) {
     const parsedQuery = qs.stringify(query, { encodeValuesOnly: true })
-    const url = new URL(`${path}?${parsedQuery}`, PROXY_URL)
-    const response = await fetch(url, { cache: 'force-cache' });
+    const url = new URL(`${path}?${parsedQuery}${isPreview ? '&preview=true' : ''}`, PROXY_URL)
+    const response = await fetch(url, options);
 
     if (!response.ok) {
         const contentType = response.headers.get('Content-Type');
