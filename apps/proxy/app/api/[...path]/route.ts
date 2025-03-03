@@ -1,15 +1,7 @@
 import cacheHandler from '@/app/utils/cache-handler';
+import { fetchFromApi } from '@/app/utils/helpers';
 import { NextRequest, NextResponse } from "next/server";
 const API_URL = process.env.API_URL!;
-
-async function fetchFromApi(path: string, state?: 'MISS' | 'PREVIEW' | 'FALLBACK'): Promise<Response> {
-    console.log(`GET ${path.replace(API_URL, '')} [${state}]`);
-
-    return fetch(path, {
-        method: 'GET',
-        headers: { "Content-Type": "application/json" },
-    });
-}
 
 async function getCachedData(path: string): Promise<any> {
     const pathKey = path.replace(API_URL, '')
@@ -41,7 +33,7 @@ async function getCachedData(path: string): Promise<any> {
     }
 }
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function GET(req: NextRequest) {
     const { url, nextUrl: { search } } = req;
     const { pathname, searchParams } = new URL(url);
     const targetUrl = `${API_URL}${pathname}${search}`;
