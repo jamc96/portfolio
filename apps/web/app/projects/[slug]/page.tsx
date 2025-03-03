@@ -54,7 +54,8 @@ export default async function Project({
                   <AnimateEntrance>
                     <CustomImage
                       {...project.cover}
-                      className="h-full w-full rounded-b-md object-cover"
+                      className="h-full w-full rounded-b-md"
+                      fill
                     />
                   </AnimateEntrance>
                 </>
