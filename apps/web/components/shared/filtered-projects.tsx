@@ -62,6 +62,7 @@ export const FilteredProjects = async ({ query }: FilteredProjects) => {
             <CustomImage
               {...selectedProject.cover}
               className="h-full w-full rounded-tr-lg"
+              fill
             />
           </AnimateEntrance>
         ) : (
