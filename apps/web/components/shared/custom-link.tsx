@@ -27,6 +27,7 @@ export const CustomLink = ({
       href={url}
       id={documentId}
       className={clsx(buttonVariants({ variant, size, className }))}
+      prefetch={true}
       {...props}
     >
       {children || label}
