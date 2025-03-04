@@ -15,7 +15,7 @@ async function getCachedData(path: string): Promise<any> {
             return JSON.parse(cached);
         }
         //cache[MISS]: get the data from the API if
-        const response = await fetchFromApi(path);
+        const response = await fetchFromApi(path, 'MISS');
 
         if (!response.ok) throw new Error(`CACHE_HANDLER_API_ERROR:  ${response.status}`);
         const data = await response.json();

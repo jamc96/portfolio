@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
 
     // 1. find existing keys with format like 'api:/api/home'
     const keysFound = await cacheHandler.findKeys(`api:${route}*`);
-    console.log('keysFound', keysFound);
+
     try {
         // 2. create Promise array with for new data all keys found
         const fetchPromises = keysFound.map(async (key) => {
@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
                 const pathKey = key.replace(/^api:/, '');
                 const path = `${API_URL}${pathKey}`;
 
-                const response = await fetchFromApi(path);
+                const response = await fetchFromApi(path, 'REVALIDATE');
 
                 if (!response.ok) {
                     throw new Error(`REVALIDATION_RESPONSE_ERROR: ${response.status} for path ${path}`);
