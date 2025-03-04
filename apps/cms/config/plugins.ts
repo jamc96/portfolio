@@ -14,4 +14,11 @@ export default ({ env }) => ({
       },
     },
   },
+  'revalidation-button': {
+    enabled: true,
+    config: {
+      url: env('REVALIDATE_URL')
+    }
+
+  },
 });
