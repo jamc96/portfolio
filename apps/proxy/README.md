@@ -1,6 +1,6 @@
 ![diagram](https://github.com/user-attachments/assets/2657ab89-e353-4c64-988d-9b84692fda90)
 
-# Custom Cache and Revalidation Proxy Service Description
+# Custom Cache and Revalidation Proxy Service
 
 The custom cache and revalidation proxy service is designed to optimize content delivery for a website by managing caching and ensuring content freshness, particularly for production and preview environments. It sits between a Content API (backend) and the Website (frontend), using a Cache DB to store and retrieve content efficiently. The proxy handles three key behaviors:
 
