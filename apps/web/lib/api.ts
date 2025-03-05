@@ -22,7 +22,7 @@ interface APIResponse<T> {
 export async function fetchAPI<T>({ path, options, query }: FetchAPIProps) {
     const parsedQuery = qs.stringify(query, { encodeValuesOnly: true })
     const url = new URL(`${path}?${parsedQuery}${isPreview ? '&preview=true' : ''}`, PROXY_URL)
-    const response = await fetch(url, options);
+    const response = await fetch(url, { ...options, cache: isPreview ? 'no-store' : options?.cache });
 
     if (!response.ok) {
         const contentType = response.headers.get('Content-Type');
