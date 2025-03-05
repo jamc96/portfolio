@@ -68,6 +68,11 @@ Steps:
 > Outcome: Ensures specific routes reflect the latest published content
 > safely, updating the Cache DB without checking the existing cache.
 
+### More Assets:
+![ContentAPI](https://github.com/user-attachments/assets/312834b4-e4c9-4056-9982-1f3f22fd419d)
+![Environments](https://github.com/user-attachments/assets/56354e17-2d39-473e-8040-53db91aab24a)
+
+
 ## 🚀 Getting Started (@monorepo/proxy)
 
 #### 1️⃣ Install Dependencies
