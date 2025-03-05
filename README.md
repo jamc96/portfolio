@@ -11,6 +11,7 @@ portfolio/
 │── apps/
 │   ├── web/       # Next.js Portfolio Website
 │   ├── cms/       # Strapi CMS
+|   ├── proxy/     # Next.js API Service
 │
 │── packages/
 │   ├── typescript-config/  # Shared TypeScript configurations
