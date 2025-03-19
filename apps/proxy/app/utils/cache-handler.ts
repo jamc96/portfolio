@@ -1,6 +1,6 @@
 import Redis from "ioredis";
 
-const CACHE_TTL = 7 * 24 * 60 * 60; // one week
+const CACHE_TTL = 26 * 7 * 24 * 60 * 60; // six months
 
 let redis: Redis;
 
